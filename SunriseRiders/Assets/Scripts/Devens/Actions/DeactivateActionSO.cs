@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Devens
+namespace Devens.Actions
 {
-    [CreateAssetMenu(menuName = "Devens/ActionSOs/DeactiveActionSO")]
+    [CreateAssetMenu(menuName = "Devens/ActionSOs/DeactivateActionSO")]
     public class DeactivateActionSO : ActionSO
     {
         public override void PerformAction(GameObject obj)
