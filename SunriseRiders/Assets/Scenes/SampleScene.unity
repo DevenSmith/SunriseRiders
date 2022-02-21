@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446546177}
   - component: {fileID: 446546178}
+  - component: {fileID: 446546179}
   m_Layer: 0
   m_Name: CharacterArm
   m_TagString: Untagged
@@ -236,6 +237,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &446546179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446546176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6079805faa52ce4cac7f68b7e9d64c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 2022960912}
+  armTransform: {fileID: 446546177}
 --- !u!1 &507238764
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: 0
+  armTransform: {fileID: 446546177}
 --- !u!114 &2022960913
 MonoBehaviour:
   m_ObjectHideFlags: 0
