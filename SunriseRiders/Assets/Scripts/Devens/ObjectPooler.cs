@@ -44,16 +44,17 @@ namespace Devens
         void Start () {
             _pooledObjects = new Dictionary<string, PoolItem>();
             foreach (var item in itemsToPool) {
-                _pooledObjects.Add(item.objectToPool.tag, new PoolItem(item.objectToPool, item.shouldExpand));
+                _pooledObjects.Add(item.objectToPool.name, new PoolItem(item.objectToPool, item.shouldExpand));
                 for (var i = 0; i < item.amountToPool; i++) {
                     var obj = Instantiate(item.objectToPool);
+                    obj.name = item.objectToPool.name;
                     obj.SetActive(false);
-                    _pooledObjects[item.objectToPool.tag].PooledObjects.Push(obj);
+                    _pooledObjects[item.objectToPool.name].PooledObjects.Push(obj);
                 }
             }
         }
         
-        /// <param name="key"> should refer to the game objects tag</param>
+        /// <param name="key"> should refer to the game objects name</param>
         public GameObject GetPooledObject(string key) 
         {
             if (!_pooledObjects.ContainsKey(key)) 
@@ -75,13 +76,13 @@ namespace Devens
 
         public void PoolObject(GameObject objectToPool)
         {
-            if (_pooledObjects.ContainsKey(objectToPool.tag))
+            if (_pooledObjects.ContainsKey(objectToPool.name))
             {
-                _pooledObjects[objectToPool.tag].PooledObjects.Push(objectToPool);
+                _pooledObjects[objectToPool.name].PooledObjects.Push(objectToPool);
             }
             else
             {
-                Debug.LogError($"Tried to pool object:{objectToPool.name} no object pool with tag{objectToPool.tag}");
+                Debug.LogError($"Tried to pool object:{objectToPool.name} no object pool with name{objectToPool.name}");
             }
         }
     }

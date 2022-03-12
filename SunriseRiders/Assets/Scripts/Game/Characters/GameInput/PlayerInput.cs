@@ -21,10 +21,13 @@ namespace Game.Characters.GameInput
         public void Update()
         {
             _movementVector.x = GetAxis("Horizontal");
+            
             if (GetAxis("Jump") > 0)
             {
                 jump = true;
             }
+
+            shoot = GetAxis("Fire1") > 0;
 
             _mousePosition = _camera.ScreenToWorldPoint(mousePosition);
             _mousePosition.z = 0;
