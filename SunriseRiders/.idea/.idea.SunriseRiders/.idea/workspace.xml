@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRunner/EditModeRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bfc774e39f154e8bacc0aae5397b53ae128600/8c/2a2b6a54/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,10 +39,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2972">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2972" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -62,7 +63,8 @@
       <workItem from="1645465782663" duration="6126000" />
       <workItem from="1647109873065" duration="4482000" />
       <workItem from="1647142721740" duration="1279000" />
-      <workItem from="1647814632469" duration="3765000" />
+      <workItem from="1647814632469" duration="4360000" />
+      <workItem from="1649647820356" duration="4815000" />
     </task>
     <servers />
   </component>
