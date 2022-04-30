@@ -70,6 +70,7 @@ namespace Devens
                 return null;
             
             var obj = Instantiate(poolItem.objectPrefab);
+            obj.name = poolItem.objectPrefab.name;
             obj.SetActive(false);
             return obj;
         }

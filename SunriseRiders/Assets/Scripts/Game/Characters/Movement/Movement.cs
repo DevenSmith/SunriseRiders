@@ -9,6 +9,7 @@ namespace Game.Characters.Movement
 {
     public class Movement : MonoBehaviour
     {
+        public Action OnFacingChanged;
         public Facing facing = Facing.Right;
         public bool isGrounded = false;
 
@@ -53,6 +54,11 @@ namespace Game.Characters.Movement
             _characterRb.velocity = _movementVelocity;
         }
 
+        private void Update()
+        {
+            UpdateFacing();
+        }
+
         /// <summary>
         /// Will most likely move this somewhere else later since facing will be based on
         /// a combination of movement and arm position
@@ -62,35 +68,42 @@ namespace Game.Characters.Movement
             if (characterInput.MovementVector.x == 0)
                 return;
 
+            var newFacing = facing;
             if (characterInput.MovementVector.x > 0)
             {
                 if (characterInput.MovementVector.y > 0)
                 {
-                    facing = Facing.RightUp;
+                    newFacing = Facing.RightUp;
                 }
                 else if(characterInput.MovementVector.y < 0)
                 {
-                    facing = Facing.RightDown;
+                    newFacing = Facing.RightDown;
                 }
                 else
                 {
-                    facing = Facing.Right;
+                    newFacing = Facing.Right;
                 }
             }
             if (characterInput.MovementVector.x < 0)
             {
                 if (characterInput.MovementVector.y > 0)
                 {
-                    facing = Facing.LeftUp;
+                    newFacing = Facing.LeftUp;
                 }
                 else if(characterInput.MovementVector.y < 0)
                 {
-                    facing = Facing.LeftDown;
+                    newFacing = Facing.LeftDown;
                 }
                 else
                 {
-                    facing = Facing.Left;
+                    newFacing = Facing.Left;
                 }
+            }
+
+            if (newFacing != facing && OnFacingChanged != null)
+            {
+                facing = newFacing;
+                OnFacingChanged.Invoke();
             }
         }
     }

@@ -7,6 +7,9 @@ namespace Game.Characters.GameInput
     {
         [SerializeField] private Transform armTransform;
 
+        [Header("Debug")] 
+        [SerializeField] private bool debuggingArmDirection = false;
+        [SerializeField] private Vector3 debugArmDirection;
         public Vector3 ArmDirection => _armDirection;
         private Vector3 _armDirection;
         private Camera _camera;
@@ -29,9 +32,16 @@ namespace Game.Characters.GameInput
 
             shoot = GetAxis("Fire1") > 0;
 
-            _mousePosition = _camera.ScreenToWorldPoint(mousePosition);
-            _mousePosition.z = 0;
-            _armDirection = (_mousePosition - armTransform.position).normalized;
+            if (!debuggingArmDirection)
+            {
+                _mousePosition = _camera.ScreenToWorldPoint(mousePosition);
+                _mousePosition.z = 0;
+                _armDirection = (_mousePosition - armTransform.position).normalized;
+            }
+            else
+            {
+                _armDirection = debugArmDirection.normalized;
+            }
         }
     }
 }
