@@ -12,6 +12,7 @@ namespace Game.Characters.Movement
         public Action OnFacingChanged;
         public Facing facing = Facing.Right;
         public bool isGrounded = false;
+        public Vector2 MovementVector2 => _movementVelocity;
 
         [SerializeField] private FloatSO groundCheckRadius;
         [SerializeField] private Transform groundCheckPosition;

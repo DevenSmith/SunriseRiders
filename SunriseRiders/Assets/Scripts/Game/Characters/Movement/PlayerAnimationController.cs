@@ -12,6 +12,9 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] private Transform playerArmTransform;
     [SerializeField] private SpriteRenderer playerArmImage;
     [SerializeField] private SpriteRenderer playerGunImage;
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private Transform playerCharacterTransform;
     
     private bool IsMovementFacingRight =>
         movement.facing == Facing.Right || movement.facing == Facing.RightDown ||
@@ -30,19 +33,38 @@ public class PlayerAnimationController : MonoBehaviour
             return;
         }
 
-        movement.OnFacingChanged += ChangeSprites;
+        movement.OnFacingChanged += OnChangedDirection;
     }
 
     private void OnDestroy()
     {
         if (movement != null)
         {
-            movement.OnFacingChanged -= ChangeSprites;
+            movement.OnFacingChanged -= OnChangedDirection;
         }
     }
 
     private void Update()
     {
+        animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
+
+        if (movement.MovementVector2.y > 0.1f)
+        {
+            animator.SetBool(MovementConstants.Jumping, true);
+            animator.SetBool(MovementConstants.Falling, false);
+        }
+        else if (movement.MovementVector2.y < -0.1f)
+        {
+            animator.SetBool(MovementConstants.Jumping, false);
+            animator.SetBool(MovementConstants.Falling, true);
+        }
+        else
+        {
+            animator.SetBool(MovementConstants.Jumping, false);
+            animator.SetBool(MovementConstants.Falling, false);
+        }
+        
+
         if (IsMovementFacingRight)
         {
             if (playerArmTransform.eulerAngles.z >= 270  || playerArmTransform.eulerAngles.z <= 90)
@@ -67,8 +89,11 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
-    private void ChangeSprites()
+    private void OnChangedDirection()
     {
+        var currentScale = playerCharacterTransform.localScale;
+        currentScale.z *= -1;
+        playerCharacterTransform.localScale = currentScale;
         playerBodyImage.flipX = !IsMovementFacingRight;
     }
 }
