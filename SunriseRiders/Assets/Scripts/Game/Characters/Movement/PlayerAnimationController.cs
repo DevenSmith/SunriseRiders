@@ -91,9 +91,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void OnChangedDirection()
     {
-        var currentScale = playerCharacterTransform.localScale;
-        currentScale.z *= -1;
-        playerCharacterTransform.localScale = currentScale;
+        playerCharacterTransform.eulerAngles += Vector3.up * 180;
         playerBodyImage.flipX = !IsMovementFacingRight;
     }
 }
