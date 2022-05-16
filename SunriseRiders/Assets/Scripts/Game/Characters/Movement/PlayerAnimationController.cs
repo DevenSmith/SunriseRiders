@@ -8,10 +8,6 @@ using UnityEngine.UI;
 public class PlayerAnimationController : MonoBehaviour
 {
     [SerializeField] private Movement movement;
-    [SerializeField] private SpriteRenderer playerBodyImage;
-    [SerializeField] private Transform playerArmTransform;
-    [SerializeField] private SpriteRenderer playerArmImage;
-    [SerializeField] private SpriteRenderer playerGunImage;
 
     [SerializeField] private Animator animator;
     [SerializeField] private Transform playerCharacterTransform;
@@ -63,35 +59,10 @@ public class PlayerAnimationController : MonoBehaviour
             animator.SetBool(MovementConstants.Jumping, false);
             animator.SetBool(MovementConstants.Falling, false);
         }
-        
-
-        if (IsMovementFacingRight)
-        {
-            if (playerArmTransform.eulerAngles.z >= 270  || playerArmTransform.eulerAngles.z <= 90)
-            {
-                playerGunImage.flipY = false;
-            }
-            else
-            {
-                playerGunImage.flipY = true;
-            }
-        }
-        else
-        {
-            if (playerArmTransform.eulerAngles.z >= 90 && playerArmTransform.eulerAngles.z <= 270)
-            {
-                playerGunImage.flipY = true;
-            }
-            else
-            {
-                playerGunImage.flipY = false;
-            }
-        }
     }
 
     private void OnChangedDirection()
     {
         playerCharacterTransform.eulerAngles += Vector3.up * 180;
-        playerBodyImage.flipX = !IsMovementFacingRight;
     }
 }

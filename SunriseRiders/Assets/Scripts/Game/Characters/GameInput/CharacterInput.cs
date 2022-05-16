@@ -9,5 +9,8 @@ namespace Game.Characters.GameInput
         public bool shoot = false;
         public Vector2 MovementVector => _movementVector;
         protected Vector2 _movementVector;
+        public Vector2 AimVector => _aimVector;
+        protected Vector2 _aimVector;
+        
     }
 }

@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189d16d1d16d3bc4897341a1556ecf06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 2022960914}
+  playerTransform: {fileID: 5346132037708465490}
 --- !u!1 &987112117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,11 +1344,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39752768db590ee4091a99714606bad3, type: 3}
---- !u!4 &2022960914 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7342329752712319846, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
-  m_PrefabInstance: {fileID: 3446507988662212148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2038392458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1534,6 +1529,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3446507987585720387, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
+      propertyPath: m_Name
+      value: RifleRigLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446507987585720397, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
+      propertyPath: m_Weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631703360345559553, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
+      propertyPath: playerCharacterTransform
+      value: 
+      objectReference: {fileID: 5346132037708465490}
     - target: {fileID: 7342329752712319846, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1582,7 +1589,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5339559397518201489, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
+    - {fileID: 1801131231690945765, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
 --- !u!1001 &4264914352875498146
 PrefabInstance:
@@ -1653,3 +1662,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3286817f4a15d7b49a7a40c22849267c, type: 3}
+--- !u!4 &5346132037708465490 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7342329752712319846, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
+  m_PrefabInstance: {fileID: 3446507988662212148}
+  m_PrefabAsset: {fileID: 0}
