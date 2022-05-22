@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94f8759b80767d478814e0d9318473f, type: 3}
   m_Name: PlayerBulletSpeed
   m_EditorClassIdentifier: 
-  floatValue: 5
+  floatValue: 7.5

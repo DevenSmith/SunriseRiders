@@ -11,7 +11,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private Transform playerCharacterTransform;
-    
+    [SerializeField] private float verticalMovementAnimationTriggerBuffer = 0.25f;
     private bool IsMovementFacingRight =>
         movement.facing == Facing.Right || movement.facing == Facing.RightDown ||
         movement.facing == Facing.RightUp;
@@ -44,12 +44,12 @@ public class PlayerAnimationController : MonoBehaviour
     {
         animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
 
-        if (movement.MovementVector2.y > 0.1f)
+        if (movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
         {
             animator.SetBool(MovementConstants.Jumping, true);
             animator.SetBool(MovementConstants.Falling, false);
         }
-        else if (movement.MovementVector2.y < -0.1f)
+        else if (movement.MovementVector2.y < - verticalMovementAnimationTriggerBuffer)
         {
             animator.SetBool(MovementConstants.Jumping, false);
             animator.SetBool(MovementConstants.Falling, true);
