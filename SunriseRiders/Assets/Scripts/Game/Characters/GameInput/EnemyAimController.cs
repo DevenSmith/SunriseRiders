@@ -16,7 +16,7 @@ namespace Game.Characters.GameInput
         private Transform _playerTransform;
         private Transform _enemyTransform;
 
-        private float _remainingDelay = 0.0f;
+        [SerializeField] private float remainingDelay = 0.0f;
 
         private void Awake()
         {
@@ -28,6 +28,7 @@ namespace Game.Characters.GameInput
         {
             base.Start();
             _playerTransform = EnemyManager.Instance.PlayerTransform;
+            remainingDelay = 0;
         }
 
         public void Update()
@@ -37,14 +38,14 @@ namespace Game.Characters.GameInput
                 return;
             }
             
-            _remainingDelay -= Time.deltaTime;
+            remainingDelay -= Time.deltaTime;
             
-            if (_remainingDelay > 0.0f)
+            if (remainingDelay > 0.0f)
             {
                 return;
             }
 
-            _remainingDelay = aimFrequency.Value;
+            remainingDelay = aimFrequency.Value;
             
             if (_playerTransform.position.y < _enemyTransform.position.y - aimHeightDifference.Value
                 && Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) < 0.5f)

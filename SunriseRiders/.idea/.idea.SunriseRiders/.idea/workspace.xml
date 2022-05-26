@@ -73,6 +73,7 @@
       <workItem from="1652662261702" duration="2992000" />
       <workItem from="1653237325416" duration="802000" />
       <workItem from="1653366892193" duration="2453000" />
+      <workItem from="1653531808226" duration="2875000" />
     </task>
     <servers />
   </component>
@@ -84,5 +85,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/Characters/Movement/PlayerAnimationController.cs</url>
+          <line>20</line>
+          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\Characters\Movement\PlayerAnimationController.cs" initialLine="20" containingFunctionPresentation="method 'Awake'">
+            <startOffsets>
+              <option value="715" />
+            </startOffsets>
+            <endOffsets>
+              <option value="716" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/Characters/GameInput/EnemyAimController.cs</url>
+          <line>47</line>
+          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\Characters\GameInput\EnemyAimController.cs" initialLine="47" containingFunctionPresentation="method 'Update'">
+            <startOffsets>
+              <option value="1248" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1284" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

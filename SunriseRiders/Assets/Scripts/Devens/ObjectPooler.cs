@@ -40,13 +40,13 @@ namespace Devens
 
             Instance = this;
         }
-        
-        void Start () {
+
+        private void Start () {
             _pooledObjects = new Dictionary<string, PoolItem>();
             foreach (var item in itemsToPool) {
                 _pooledObjects.Add(item.objectToPool.name, new PoolItem(item.objectToPool, item.shouldExpand));
                 for (var i = 0; i < item.amountToPool; i++) {
-                    var obj = Instantiate(item.objectToPool);
+                    var obj = Instantiate(item.objectToPool, transform, true);
                     obj.name = item.objectToPool.name;
                     obj.SetActive(false);
                     _pooledObjects[item.objectToPool.name].PooledObjects.Push(obj);
@@ -69,7 +69,7 @@ namespace Devens
             if (!poolItem.shouldExpand) 
                 return null;
             
-            var obj = Instantiate(poolItem.objectPrefab);
+            var obj = Instantiate(poolItem.objectPrefab, transform, true);
             obj.name = poolItem.objectPrefab.name;
             obj.SetActive(false);
             return obj;
