@@ -52,12 +52,16 @@ namespace Game.Characters.GameInput
             {
                 aimTransform.eulerAngles += (Vector3.right * aimRotationAngle.Value);
             }
-            else if (_playerTransform.position.y > _enemyTransform.position.y + aimHeightDifference.Value
+            
+            if (_playerTransform.position.y > _enemyTransform.position.y + aimHeightDifference.Value
                 && Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) < 0.5f)
             {
                 aimTransform.eulerAngles -= (Vector3.right * aimRotationAngle.Value);
             }
-            else
+            
+            if (_playerTransform.position.y > _enemyTransform.position.y + aimHeightDifference.Value
+                && _playerTransform.position.y > _enemyTransform.position.y + aimHeightDifference.Value
+                && Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) > 0.5f)
             {
                 var currentAngles = aimTransform.eulerAngles;
                 currentAngles.x = _originalAimRotation;

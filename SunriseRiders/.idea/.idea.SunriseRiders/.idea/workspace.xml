@@ -39,10 +39,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="52944">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="52944" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -74,7 +74,7 @@
       <workItem from="1653237325416" duration="802000" />
       <workItem from="1653366892193" duration="2453000" />
       <workItem from="1653531808226" duration="2875000" />
-      <workItem from="1653763354247" duration="1044000" />
+      <workItem from="1653763354247" duration="2232000" />
     </task>
     <servers />
   </component>
@@ -102,19 +102,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/Characters/GameInput/EnemyAimController.cs</url>
-          <line>47</line>
-          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\Characters\GameInput\EnemyAimController.cs" initialLine="47" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="1248" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1284" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
