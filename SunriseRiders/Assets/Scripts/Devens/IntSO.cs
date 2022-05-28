@@ -1,4 +1,6 @@
-﻿namespace Devens
+﻿using System;
+
+namespace Devens
 {
     using UnityEngine;
 
@@ -7,6 +9,8 @@
     {
         [SerializeField] private int intValue;
 
+        public Action OnValueChanged;
+        
         public IntSO() { }
 
         public IntSO(IntSO original)
@@ -17,7 +21,17 @@
         public int Value
         {
             get => intValue;
-            set => intValue = value;
+            set
+            {
+                if (value == intValue)
+                {
+                    return;
+                }
+
+                intValue = value;
+                OnValueChanged?.Invoke();
+
+            }
         }
     }
 }

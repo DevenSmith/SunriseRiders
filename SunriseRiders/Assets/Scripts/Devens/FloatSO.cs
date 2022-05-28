@@ -1,4 +1,6 @@
-﻿namespace Devens
+﻿using System;
+
+namespace Devens
 {
     using UnityEngine;
 
@@ -7,6 +9,8 @@
     {
         [SerializeField] private float floatValue;
 
+        public Action OnValueChanged;
+        
         public FloatSO() { }
 
         public FloatSO(FloatSO original)
@@ -17,7 +21,16 @@
         public float Value
         {
             get => floatValue;
-            set => floatValue = value;
+            set
+            {
+                if (value == floatValue)
+                {
+                    return;
+                }
+
+                floatValue = value;
+                OnValueChanged?.Invoke();
+            } 
         }
     }
 }

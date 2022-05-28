@@ -12,9 +12,12 @@ namespace Game.Characters.Health
         [SerializeField] private IntSO characterStartingHealth;
         [SerializeField] private int characterCurrentHealth;
 
-        [SerializeField] private UnityEvent onHurt;
-        
+        public UnityEvent onDie;
+        public UnityEvent onHurt;
+        public UnityEvent onHeal;
+
         public int CurrentHealth => characterCurrentHealth;
+        public int StartingHealth => characterStartingHealth.Value;
         
         public void Awake()
         {
@@ -28,7 +31,11 @@ namespace Game.Characters.Health
 
         public void Heal(int amount)
         {
+            if (amount <= 0)
+                return;
+
             characterCurrentHealth = Mathf.Min(characterCurrentHealth + amount, characterStartingHealth.Value);
+            onHeal?.Invoke();
         }
 
         public void Hurt(int amount)
@@ -39,10 +46,11 @@ namespace Game.Characters.Health
             if (characterCurrentHealth <= 0)
             {
                 gameObject.SetActive(false);
+                onDie?.Invoke();
             }
             else
             {
-                onHurt.Invoke();
+                onHurt?.Invoke();
             }
         }
     }
