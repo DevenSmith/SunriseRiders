@@ -6,15 +6,15 @@ namespace Game.Characters.Shooting
 {
     public class GunManShooting : MonoBehaviour
     {
-        [SerializeField] private FloatSO delayBetweenShots;
-        [SerializeField] private StringSO bulletPrefabName;
-        [SerializeField] private Transform bulletSpawnPoint;
-        [SerializeField] private FloatSO playerDistanceToStartShooting;
+        [SerializeField] protected FloatSO delayBetweenShots;
+        [SerializeField] protected StringSO bulletPrefabName;
+        [SerializeField] protected Transform bulletSpawnPoint;
+        [SerializeField] protected FloatSO playerDistanceToStartShooting;
         
-        [SerializeField] private float shotDelay = 0.0f;
+        [SerializeField] protected float shotDelay = 0.0f;
 
-        private Transform _enemyTransform;
-        private Transform _playerTransform;
+        protected Transform _enemyTransform;
+        protected Transform _playerTransform;
         
         private bool CanStartShooting => Mathf.Abs((_enemyTransform.position - _playerTransform.position).magnitude) < playerDistanceToStartShooting.Value;
 
@@ -44,7 +44,7 @@ namespace Game.Characters.Shooting
             }
         }
         
-        private void Shoot()
+        protected virtual void Shoot()
         {
             var bullet = ObjectPooler.Instance.GetPooledObject(bulletPrefabName.Value);
             bullet.SetActive(true);
