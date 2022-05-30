@@ -535,9 +535,9 @@ BoxCollider:
   m_GameObject: {fileID: 793710984225667071}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43, y: 1.78, z: 1}
+  m_Size: {x: 0.43, y: 1.78, z: 7.44}
   m_Center: {x: 0, y: 0.74, z: 0}
 --- !u!114 &8634582648260493214
 MonoBehaviour:
@@ -615,7 +615,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterStartingHealth: {fileID: 11400000, guid: 1d2ad091e34e12c48982d5c134a8792d, type: 2}
   characterCurrentHealth: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
   onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &793972280257347473

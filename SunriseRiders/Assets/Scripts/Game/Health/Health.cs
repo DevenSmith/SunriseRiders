@@ -9,6 +9,8 @@ namespace Game.Characters.Health
 {
     public class Health : MonoBehaviour, IDamageable, IHealth
     {
+        [SerializeField] private bool invincible = false;
+        
         [SerializeField] private IntSO characterStartingHealth;
         [SerializeField] private int characterCurrentHealth;
 
@@ -40,7 +42,7 @@ namespace Game.Characters.Health
 
         public void Hurt(int amount)
         {
-            if (amount <= 0)
+            if (invincible || amount <= 0)
                 return;
             characterCurrentHealth -= amount;
             if (characterCurrentHealth <= 0)
