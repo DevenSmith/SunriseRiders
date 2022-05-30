@@ -8,6 +8,12 @@
         LeftUp,
         RightDown,
         LeftDown,
+        Up,
+        Down,
+        Forward,
+        ForwardUp,
+        ForwardDown,
+        None
     }
 }
 

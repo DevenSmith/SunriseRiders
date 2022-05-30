@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Devens;
+using Game.Characters.Movement;
 using UnityEngine;
 
 namespace Game.Characters.GameInput
@@ -10,9 +12,17 @@ namespace Game.Characters.GameInput
     public class PlayerAimController : MonoBehaviour
     {
         [SerializeField] private PlayerInput playerInput;
+        [SerializeField] private Movement.Movement playerMovement;
         [SerializeField] private Transform aimTransform;
         [SerializeField] private FloatSO aimRotationAngle;
         private float _originalAimRotation;
+        private Facing _aimFacing;
+        private Facing _previousFacing;
+        
+        private bool IsFacingRight =>
+            playerMovement.facing == Facing.Right
+            || playerMovement.facing == Facing.RightDown
+            || playerMovement.facing == Facing.RightUp;
         
         public void Start()
         {
@@ -25,6 +35,15 @@ namespace Game.Characters.GameInput
                 }
             }
 
+            if (playerMovement == null)
+            {
+                playerMovement = GetComponent<Movement.Movement>();
+                if (playerMovement == null)
+                {
+                    Debug.LogError(gameObject.name + "playerMovement is null and couldn't find movement component");
+                }
+            }
+            
             if (aimTransform == null)
                 aimTransform = transform;
 
@@ -33,27 +52,75 @@ namespace Game.Characters.GameInput
 
         public void Update()
         {
-            if (playerInput.AimVector.y > 0.1f && Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) < 0.5f)
-            {
-                aimTransform.eulerAngles -= (Vector3.right * aimRotationAngle.Value);
-            }
-            
-            if (playerInput.AimVector.y < -0.1f && Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) < 0.5f)
-            {
-                aimTransform.eulerAngles += (Vector3.right * aimRotationAngle.Value);
-            }
+            UpdateAimFacing();
 
-            if ((playerInput.AimVector.y != 0.0f ||
-                 (!(Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) > 0.1f))) &&
-                !(Math.Abs(aimTransform.eulerAngles.x - _originalAimRotation) < -0.1f))
+            if (_aimFacing == _previousFacing)
             {
                 return;
             }
-            
             var currentAngles = aimTransform.eulerAngles;
-            currentAngles.x = _originalAimRotation;
+            
+            switch (_aimFacing)
+            {
+                case Facing.Forward:
+                    currentAngles.x = _originalAimRotation;
+                    break;
+                case Facing.ForwardUp:
+                    currentAngles.x = _originalAimRotation - aimRotationAngle.Value;
+                    break;
+                case Facing.ForwardDown:
+                    currentAngles.x = _originalAimRotation + aimRotationAngle.Value;
+                    break;
+                case Facing.Up:
+                    currentAngles.x = _originalAimRotation - 90.0f;
+                    break;
+                case Facing.Down:
+                    currentAngles.x = _originalAimRotation + 90.0f;
+                    break;
+                default:
+                    Debug.LogError("PlayerAimController was assigned a facing it shouldn't have been: " + _aimFacing);
+                    break;
+            }
+            
             aimTransform.eulerAngles = currentAngles;
-
         }
+
+        private void UpdateAimFacing()
+        {
+            _previousFacing = _aimFacing;
+            
+            if (playerMovement.MovementVector2.x == 0.0f)
+            {
+                if (playerInput.AimVector.y > 0.1f)
+                {
+                    _aimFacing = Facing.Up;
+                }
+                else if (playerInput.AimVector.y < -0.1f)
+                {
+                    _aimFacing = Facing.Down;
+                }
+                else
+                {
+                    _aimFacing = Facing.Forward;
+                }
+            }
+            else
+            {
+                if (playerInput.AimVector.y > 0.1f)
+                {
+                    _aimFacing = Facing.ForwardUp;
+                }
+                else if (playerInput.AimVector.y < -0.1f)
+                {
+                    _aimFacing = Facing.ForwardDown;
+                }
+                else
+                {
+                    _aimFacing = Facing.Forward;
+                }
+            }
+        }
+
+        
     }
 }
