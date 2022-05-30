@@ -29,8 +29,8 @@ namespace Devens
     {
         public static ObjectPooler Instance;
         public List<ObjectPoolItem> itemsToPool;
-        private Dictionary<string, PoolItem> _pooledObjects;
-        public void Awake()
+        protected Dictionary<string, PoolItem> _pooledObjects;
+        public virtual void Awake()
         {
             if (Instance != null)
             {
@@ -39,9 +39,9 @@ namespace Devens
             }
 
             Instance = this;
+            Initialize();
         }
-
-        private void Start () {
+        protected void Initialize () {
             _pooledObjects = new Dictionary<string, PoolItem>();
             foreach (var item in itemsToPool) {
                 _pooledObjects.Add(item.objectToPool.name, new PoolItem(item.objectToPool, item.shouldExpand));
@@ -53,7 +53,7 @@ namespace Devens
                 }
             }
         }
-        
+
         /// <param name="key"> should refer to the game objects name</param>
         public GameObject GetPooledObject(string key) 
         {

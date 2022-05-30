@@ -1,11 +1,9 @@
-﻿using System.Runtime.CompilerServices;
-using Devens;
+﻿using Devens;
 using Game.Damage;
-using Game.Health;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game.Characters.Health
+namespace Game.Health
 {
     public class Health : MonoBehaviour, IDamageable, IHealth
     {

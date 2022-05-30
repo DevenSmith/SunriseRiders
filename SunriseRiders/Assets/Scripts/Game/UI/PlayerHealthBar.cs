@@ -10,11 +10,11 @@ namespace Game.UI
     {
         [SerializeField] private Slider healthBarSlider;
         
-        private Characters.Health.Health _playerHealth;
+        private Health.Health _playerHealth;
 
         private void Start()
         {
-           _playerHealth = FindObjectOfType<PlayerInput>().GetComponent<Characters.Health.Health>();
+           _playerHealth = FindObjectOfType<PlayerInput>().GetComponent<Health.Health>();
            _playerHealth.onHurt.AddListener(UpdateHealthBar);
            _playerHealth.onHeal.AddListener(UpdateHealthBar);
            _playerHealth.onDie.AddListener(UpdateHealthBar);
