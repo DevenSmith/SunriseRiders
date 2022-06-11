@@ -45,8 +45,11 @@ namespace Game.Characters.Enemies
 
         private void OnDisable()
         {
-            _healthView.gameObject.SetActive(false);
-            _healthView = null;
+            if (_healthView != null)
+            {
+                _healthView.gameObject.SetActive(false);
+                _healthView = null;
+            }
         }
     }
 }

@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 5329657032382808552}
   - component: {fileID: 6685066254902853204}
   m_Layer: 10
-  m_Name: ShotGunMan
+  m_Name: ShotgunMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,6 +561,7 @@ MonoBehaviour:
   aimRotationAngle: {fileID: 11400000, guid: 0c05f04bd6ede754092521bdae42ae37, type: 2}
   aimFrequency: {fileID: 11400000, guid: d7aaa8904f71f29459003861c7c39a21, type: 2}
   aimHeightDifference: {fileID: 11400000, guid: 2189ced0a589eda4d9a2f26bc9378e79, type: 2}
+  aimNearnessDistance: {fileID: 11400000, guid: f5ed0c1329b73054794c8554ce0b42d6, type: 2}
   remainingDelay: 0
 --- !u!136 &6020559885132854141
 CapsuleCollider:
