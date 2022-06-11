@@ -2045,6 +2045,7 @@ GameObject:
   - component: {fileID: 7346965331848914479}
   - component: {fileID: 7257398556765524033}
   - component: {fileID: 3446507987697594498}
+  - component: {fileID: 832948730836330529}
   m_Layer: 0
   m_Name: Character_Cowboy_01
   m_TagString: Untagged
@@ -2119,6 +2120,42 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
     m_Visible: 1
+--- !u!114 &832948730836330529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341807954338194869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0008bb5388938b34bb4aac4afa7461fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 3445269200453783047}
+  - {fileID: 7341052603821887377}
+  - {fileID: 7340982184356315377}
+  - {fileID: 7342795669946868427}
+  - {fileID: 7341328492440794351}
+  - {fileID: 7341885870889759239}
+  - {fileID: 7341466044031392535}
+  - {fileID: 7340969655779960977}
+  characterIndex: 0
+  materials:
+  - {fileID: 2100000, guid: 66a8a6e30880caa48908020cf5388217, type: 2}
+  - {fileID: 2100000, guid: a15da839caab97b4f9cd9586f4ff31e6, type: 2}
+  - {fileID: 2100000, guid: e611177a3c87f9746befe4d104a33201, type: 2}
+  - {fileID: 2100000, guid: 5146a78f90d41354b9e048f81986a8f3, type: 2}
+  - {fileID: 2100000, guid: 5e3d175f3d5b8914cb1c010383991d6d, type: 2}
+  - {fileID: 2100000, guid: 67cb02df386c44e4b9da736f1a3688f9, type: 2}
+  - {fileID: 2100000, guid: 389b1eed39cf63c4fb8efea61e9976c5, type: 2}
+  - {fileID: 2100000, guid: 0363b46d437346a419e1ca86ea14de9e, type: 2}
+  - {fileID: 2100000, guid: dd9a2415c6257cb4ba1738d92c094497, type: 2}
+  - {fileID: 2100000, guid: 3b20901891546e04999f06509086c9bf, type: 2}
+  - {fileID: 2100000, guid: 0e05935a90b6d7849a0fff4320edec77, type: 2}
+  - {fileID: 2100000, guid: e8a12213ace71464e991b09e2e492540, type: 2}
+  materialIndex: 0
 --- !u!1 &7341865227941394651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,6 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 7342329752712319844}
+  playerMovement: {fileID: 0}
   aimTransform: {fileID: 7381083363141214483}
   aimRotationAngle: {fileID: 11400000, guid: 41f4597d45c33754aab3266f87393736, type: 2}
 --- !u!114 &5631703360345559553
@@ -2682,9 +2720,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0996acb57fd50498c602afb8a4e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
   characterStartingHealth: {fileID: 11400000, guid: c311fa68ddc7b194dbed6749fab6f27c, type: 2}
   characterCurrentHealth: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
   onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7342701844738595333
