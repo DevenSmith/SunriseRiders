@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d1d5a0a7c19404a97ceefd28864629e6c00/df/891e089c/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRunner/EditModeRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bfc774e39f154e8bacc0aae5397b53ae128600/8c/2a2b6a54/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -78,7 +79,8 @@
       <workItem from="1653870769055" duration="1653000" />
       <workItem from="1653880397964" duration="2082000" />
       <workItem from="1653924884734" duration="5208000" />
-      <workItem from="1653946332626" duration="1472000" />
+      <workItem from="1653946332626" duration="1850000" />
+      <workItem from="1654969462996" duration="2942000" />
     </task>
     <servers />
   </component>
@@ -90,24 +92,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/Characters/Movement/PlayerAnimationController.cs</url>
-          <line>20</line>
-          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\Characters\Movement\PlayerAnimationController.cs" initialLine="20" containingFunctionPresentation="method 'Awake'">
-            <startOffsets>
-              <option value="715" />
-            </startOffsets>
-            <endOffsets>
-              <option value="716" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
