@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 namespace Game.Characters.GameInput
 {
-    public class CharacterInput : MonoBehaviour
+    public class CharacterInput : PausableMonoBehavior
     {
         public bool jump = false;
         public bool shoot = false;

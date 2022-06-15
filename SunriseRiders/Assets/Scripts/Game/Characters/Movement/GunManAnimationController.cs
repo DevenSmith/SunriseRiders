@@ -29,7 +29,6 @@ namespace Game.Characters.Movement
                 facing = Facing.Right;
                 _enemyTransform.eulerAngles += Vector3.up * 180;
             }
-            
         }
         
     }

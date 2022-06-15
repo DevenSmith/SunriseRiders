@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 namespace Game.Characters.Movement
 {
-    public class Movement : MonoBehaviour
+    public class Movement : PausableMonoBehavior
     {
         public Action OnFacingChanged;
         public Facing facing = Facing.Right;
@@ -24,6 +24,8 @@ namespace Game.Characters.Movement
         private Rigidbody _characterRb;
         private Vector2 _movementVelocity;
 
+        private bool _pausedValuesSet;
+        private Vector2 _prePausedVelocity;
         private void Awake()
         {
             if (_characterRb != null) return;
@@ -37,6 +39,24 @@ namespace Game.Characters.Movement
         
         private void FixedUpdate()
         {
+            switch (Paused)
+            {
+                case true:
+                {
+                    if (!_pausedValuesSet)
+                    {
+                        _prePausedVelocity = _characterRb.velocity;
+                        _pausedValuesSet = true;
+                    }
+                    _characterRb.velocity = Vector3.zero;
+                    return;
+                }
+                case false when _pausedValuesSet:
+                    _pausedValuesSet = false;
+                    break;
+            }
+
+
             isGrounded = Physics.OverlapSphere(groundCheckPosition.position, groundCheckRadius.Value, whatIsGround).Length > 0;
             
             _movementVelocity.x = characterInput.MovementVector.x * movementSpeed.Value;

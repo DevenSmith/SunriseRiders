@@ -547,10 +547,12 @@ GameObject:
   - component: {fileID: 1438007180865767157}
   - component: {fileID: 1672592395791155765}
   - component: {fileID: 6020559885132854141}
-  - component: {fileID: 4403830725656628391}
   - component: {fileID: 4346917599602442866}
   - component: {fileID: 5329657032382808552}
   - component: {fileID: 6685066254902853204}
+  - component: {fileID: 109766460}
+  - component: {fileID: 109766461}
+  - component: {fileID: 4070671090970152493}
   m_Layer: 10
   m_Name: ShotgunMan
   m_TagString: Untagged
@@ -637,20 +639,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &4403830725656628391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507829571958796282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4440ad36e9953249ab5dde5fb2e3893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 8593895446565940418}
-  facing: 0
 --- !u!114 &4346917599602442866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +697,71 @@ MonoBehaviour:
   shotDelay: 0
   bulletsToShoot: {fileID: 11400000, guid: b75b8e5aa3878f34b932da880997ac01, type: 2}
   maxSpreadAngle: {fileID: 11400000, guid: c421fed047aef8d4ba58c002ce12f436, type: 2}
+--- !u!114 &109766460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507829571958796282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffeaf6cac8945514db0ccc7f0693625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facing: 0
+  isGrounded: 0
+  groundCheckRadius: {fileID: 11400000, guid: ee811a2f03d03d54e89577a05b271bf0, type: 2}
+  groundCheckPosition: {fileID: 6168547889407745464}
+  movementSpeed: {fileID: 11400000, guid: 25770735e92e80848bad337a3d39fac7, type: 2}
+  jumpForce: {fileID: 11400000, guid: c489921ea12d9b04a86b54724a3adcb9, type: 2}
+  characterInput: {fileID: 109766461}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &109766461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507829571958796282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff667233fc9e6043aed78f549a593a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: 0
+  shoot: 0
+  patrolType: 2
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  patrolState: 0
+  patrolDestinationIndex: 0
+  indexDirection: 1
+  bufferDistanceToStop: {fileID: 11400000, guid: 8f977fa654a39d54db55adc2082d437c, type: 2}
+  movement: {fileID: 109766460}
+  timeToWaitAtPatrolPoint: {fileID: 11400000, guid: 2b2bb8fd5cbd79745ae3cec7494e6c1d, type: 2}
+  idleTime: 0
+--- !u!114 &4070671090970152493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507829571958796282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82080ffbe71d96445b5460e142ec08c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8593895446565940418}
+  facing: 0
+  patrol: {fileID: 109766461}
 --- !u!1 &8507867413022644872
 GameObject:
   m_ObjectHideFlags: 0
