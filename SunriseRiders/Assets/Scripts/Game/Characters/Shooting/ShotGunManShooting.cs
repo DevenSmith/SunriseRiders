@@ -10,6 +10,10 @@ namespace Game.Characters.Shooting
 
         protected override void Shoot()
         {
+            var targetPos = _playerTargetTransform.position;
+            var position = bulletSpawnPoint.position;
+            targetPos.z = position.z;
+            bulletSpawnPoint.right = (targetPos - position).normalized;
             var originalAngle = bulletSpawnPoint.eulerAngles;
 
             for (var i = 0; i < bulletsToShoot.Value; i++)
@@ -17,7 +21,10 @@ namespace Game.Characters.Shooting
                 var modifiedAngle = originalAngle;
                 modifiedAngle.z += Random.Range(-maxSpreadAngle.Value, maxSpreadAngle.Value);
                 bulletSpawnPoint.eulerAngles = modifiedAngle;
-                base.Shoot();
+                var bullet = ObjectPooler.Instance.GetPooledObject(bulletPrefabName.Value);
+                bullet.SetActive(true);
+                bullet.transform.position = position;
+                bullet.transform.rotation = bulletSpawnPoint.rotation;
             }
 
             bulletSpawnPoint.eulerAngles = originalAngle;

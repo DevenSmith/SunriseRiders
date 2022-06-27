@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.IsolatedStorage;
 using Devens;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace Game.Characters.Shooting
 
         protected Transform _enemyTransform;
         protected Transform _playerTransform;
+        protected Transform _playerTargetTransform;
         
         private bool CanStartShooting => Mathf.Abs((_enemyTransform.position - _playerTransform.position).magnitude) < playerDistanceToStartShooting.Value;
 
@@ -22,6 +24,7 @@ namespace Game.Characters.Shooting
         {
             _enemyTransform = transform;
             _playerTransform = EnemyManager.Instance.PlayerTransform;
+            _playerTargetTransform = EnemyManager.Instance.PlayerTargetPoint;
         }
 
 
@@ -46,9 +49,13 @@ namespace Game.Characters.Shooting
         
         protected virtual void Shoot()
         {
+            var targetPos = _playerTargetTransform.position;
+            var position = bulletSpawnPoint.position;
+            targetPos.z = position.z;
+            bulletSpawnPoint.right = (targetPos - position).normalized;
             var bullet = ObjectPooler.Instance.GetPooledObject(bulletPrefabName.Value);
             bullet.SetActive(true);
-            bullet.transform.position = bulletSpawnPoint.position;
+            bullet.transform.position = position;
             bullet.transform.rotation = bulletSpawnPoint.rotation;
         }
     }

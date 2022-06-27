@@ -9,8 +9,10 @@ namespace Game
         public static EnemyManager Instance;
 
         [SerializeField] private Transform playerTransform;
+        [SerializeField] private Transform playerTargetPoint;
 
         public Transform PlayerTransform => playerTransform;
+        public Transform PlayerTargetPoint => playerTargetPoint;
 
         private void Awake()
         {
@@ -33,6 +35,11 @@ namespace Game
                 {
                     Debug.LogError("No player set or found!");
                 }
+            }
+
+            if (playerTargetPoint == null)
+            {
+                Debug.LogError("didn't assign the player target point to the enemy manager");
             }
         }
     }
