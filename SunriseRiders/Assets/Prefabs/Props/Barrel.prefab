@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4264914351873148029}
   - component: {fileID: 4264914351873148031}
   - component: {fileID: 4264914351873148030}
-  - component: {fileID: 4264914351873148025}
   - component: {fileID: 4264914351873148024}
+  - component: {fileID: 231634974894443198}
+  - component: {fileID: 3807289307440317412}
   m_Layer: 11
   m_Name: Barrel
   m_TagString: Untagged
@@ -65,35 +66,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &4264914351873148025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4264914351873148027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b6748bdc81430459818abdb04d61ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  propStartingHealth: {fileID: 11400000, guid: 452f3fa82d0d39a4b810ab1a6188d2f6, type: 2}
-  propCurrentHealth: 0
-  onHurt:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4264914351873148024}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: HIT
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &4264914351873148024
 Animator:
   serializedVersion: 3
@@ -113,6 +85,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &231634974894443198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264914351873148027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0996acb57fd50498c602afb8a4e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincible: 0
+  characterStartingHealth: {fileID: 11400000, guid: 452f3fa82d0d39a4b810ab1a6188d2f6, type: 2}
+  characterCurrentHealth: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3807289307440317412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264914351873148027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8806a477e537b2c4fab6f118232df238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 231634974894443198}
+  strobeDuration: {fileID: 11400000, guid: b61049673efa8fd4582a70d9dce18597, type: 2}
+  strobeRampUp: {fileID: 11400000, guid: c0cbd3734e471ce4f8704234155c1a07, type: 2}
+  strobeStartRate: {fileID: 11400000, guid: 879e836f3a3d76b448a705fc7a4b5a0b, type: 2}
+  objectsToStrobe:
+  - {fileID: 7984304923956766161}
+  colliders:
+  - {fileID: 4264914351873148031}
+  - {fileID: 7276851152165487673}
+  rigidBody: {fileID: 4264914351873148030}
 --- !u!1 &6020805580717336108
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +237,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 64258962696828248, guid: a1ef1d012cb6db34b9666c8da15cf70a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1ef1d012cb6db34b9666c8da15cf70a, type: 3}
+--- !u!1 &7984304923956766161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1358722407381910, guid: a1ef1d012cb6db34b9666c8da15cf70a, type: 3}
+  m_PrefabInstance: {fileID: 7982947852029058631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7982565969745719811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4193202784988228, guid: a1ef1d012cb6db34b9666c8da15cf70a, type: 3}

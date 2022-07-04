@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3985021205349874843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866783606990105841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8806a477e537b2c4fab6f118232df238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 7893235567085126009}
+  strobeDuration: {fileID: 11400000, guid: b61049673efa8fd4582a70d9dce18597, type: 2}
+  strobeRampUp: {fileID: 11400000, guid: c0cbd3734e471ce4f8704234155c1a07, type: 2}
+  strobeStartRate: {fileID: 11400000, guid: 879e836f3a3d76b448a705fc7a4b5a0b, type: 2}
+  objectsToStrobe:
+  - {fileID: 8348915299501166026}
+  - {fileID: 2868434443591932477}
+  colliders:
+  - {fileID: 4768729823765005822}
+  rigidBody: {fileID: 2866783606990105843}
 --- !u!1 &3227690527850686869
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +498,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[4]
       value: 
       objectReference: {fileID: 3227690528732332983}
+    - target: {fileID: 6685066254902853204, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+      propertyPath: enemyHealth
+      value: 
+      objectReference: {fileID: 7893235567085126009}
     - target: {fileID: 8507829571958796261, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -526,8 +552,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+--- !u!1 &2866783606990105841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8507829571958796282, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+  m_PrefabInstance: {fileID: 5897812717739442955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2866783606990105838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8507829571958796261, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+  m_PrefabInstance: {fileID: 5897812717739442955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2866783606990105843 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8507829571958796280, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+  m_PrefabInstance: {fileID: 5897812717739442955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4768729823765005822 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1438007180865767157, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+  m_PrefabInstance: {fileID: 5897812717739442955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7893235567085126009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4346917599602442866, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+  m_PrefabInstance: {fileID: 5897812717739442955}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866783606990105841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0996acb57fd50498c602afb8a4e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8348915299501166026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2451210892251188929, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
+  m_PrefabInstance: {fileID: 5897812717739442955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2868434443591932477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8509415736285780278, guid: 184a35efe2fb1fe48b1043a2109cd9ba, type: 3}
   m_PrefabInstance: {fileID: 5897812717739442955}
   m_PrefabAsset: {fileID: 0}

@@ -43,12 +43,19 @@ namespace Game.Health
             _health = healthValue;
             UpdateHealthAmount();
             _health.onHurt.AddListener(UpdateHealthAmount);
+            _health.onDie.AddListener(HideHealthAmount);
             _gamePositionTransform = transformValue;
         }
 
         private void UpdateHealthAmount()
         {
             healthSlider.value = (float)_health.CurrentHealth / (float)_health.StartingHealth;
+        }
+
+        private void HideHealthAmount()
+        {
+            healthSlider.value = 0;
+            gameObject.SetActive(false);
         }
         
 

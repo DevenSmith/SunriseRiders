@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 4616117816511468706}
   - component: {fileID: 4702154396241287799}
   - component: {fileID: 3811326015261989357}
+  - component: {fileID: 1367995137092889309}
   m_Layer: 10
   m_Name: GunMan
   m_TagString: Untagged
@@ -558,6 +559,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 4697981379018350435}
   playerDistanceToStartShooting: {fileID: 11400000, guid: e3b5e71b2061c294f907a54516207900, type: 2}
   shotDelay: 0
+  enemyHealth: {fileID: 4702154396241287799}
 --- !u!114 &7648255556659223088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +577,7 @@ MonoBehaviour:
   aimFrequency: {fileID: 11400000, guid: d7aaa8904f71f29459003861c7c39a21, type: 2}
   aimHeightDifference: {fileID: 11400000, guid: 2189ced0a589eda4d9a2f26bc9378e79, type: 2}
   aimNearnessDistance: {fileID: 11400000, guid: f5ed0c1329b73054794c8554ce0b42d6, type: 2}
+  enemyHealth: {fileID: 4702154396241287799}
   remainingDelay: 0
 --- !u!136 &3359510865639189368
 CapsuleCollider:
@@ -643,6 +646,28 @@ MonoBehaviour:
   healthBarName: {fileID: 11400000, guid: 66d9c71f18dd83d4cb8230c1193b29dc, type: 2}
   enemyHealth: {fileID: 4702154396241287799}
   healthBarPos: {fileID: 2370924859772681364}
+--- !u!114 &1367995137092889309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793710984225667071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8806a477e537b2c4fab6f118232df238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 4702154396241287799}
+  strobeDuration: {fileID: 11400000, guid: b61049673efa8fd4582a70d9dce18597, type: 2}
+  strobeRampUp: {fileID: 11400000, guid: c0cbd3734e471ce4f8704234155c1a07, type: 2}
+  strobeStartRate: {fileID: 11400000, guid: 879e836f3a3d76b448a705fc7a4b5a0b, type: 2}
+  objectsToStrobe:
+  - {fileID: 794241582996685107}
+  - {fileID: 6851735719723996868}
+  colliders:
+  - {fileID: 7991322998932332272}
+  rigidBody: {fileID: 793710984225667069}
 --- !u!1 &793972280257347473
 GameObject:
   m_ObjectHideFlags: 0

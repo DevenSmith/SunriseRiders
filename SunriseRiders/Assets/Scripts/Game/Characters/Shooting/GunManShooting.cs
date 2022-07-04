@@ -13,6 +13,7 @@ namespace Game.Characters.Shooting
         [SerializeField] protected FloatSO playerDistanceToStartShooting;
         
         [SerializeField] protected float shotDelay = 0.0f;
+        [SerializeField] protected Health.Health enemyHealth;
 
         protected Transform _enemyTransform;
         protected Transform _playerTransform;
@@ -25,6 +26,14 @@ namespace Game.Characters.Shooting
             _enemyTransform = transform;
             _playerTransform = EnemyManager.Instance.PlayerTransform;
             _playerTargetTransform = EnemyManager.Instance.PlayerTargetPoint;
+            enemyHealth.onDie.AddListener(OnDeathAction);
+
+        }
+
+        private void OnDeathAction()
+        {
+            enabled = false;
+            enemyHealth.onDie.RemoveListener(OnDeathAction);
         }
 
 

@@ -2618,6 +2618,7 @@ GameObject:
   - component: {fileID: 5631703360345559553}
   - component: {fileID: 4645886019954446334}
   - component: {fileID: 297467729}
+  - component: {fileID: 7971411571240825334}
   m_Layer: 9
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -2795,6 +2796,28 @@ MonoBehaviour:
   onHeal:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7971411571240825334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7342329752712319865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8806a477e537b2c4fab6f118232df238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 297467729}
+  strobeDuration: {fileID: 11400000, guid: b61049673efa8fd4582a70d9dce18597, type: 2}
+  strobeRampUp: {fileID: 11400000, guid: c0cbd3734e471ce4f8704234155c1a07, type: 2}
+  strobeStartRate: {fileID: 11400000, guid: 879e836f3a3d76b448a705fc7a4b5a0b, type: 2}
+  objectsToStrobe:
+  - {fileID: 3598552817325486658}
+  - {fileID: 7341807954338194869}
+  colliders:
+  - {fileID: 401537654}
+  rigidBody: {fileID: 7342329752712319867}
 --- !u!1 &7342701844738595333
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ namespace Game.Characters.GameInput
         [SerializeField] private FloatSO aimFrequency;
         [SerializeField] private FloatSO aimHeightDifference;
         [SerializeField] private FloatSO aimNearnessDistance;
+        [SerializeField] private Health.Health enemyHealth;
         
         private float _originalAimRotation;
         private Transform _playerTransform;
@@ -34,8 +35,15 @@ namespace Game.Characters.GameInput
             base.Start();
             _playerTransform = EnemyManager.Instance.PlayerTransform;
             remainingDelay = 0;
+            enemyHealth.onDie.AddListener(OnDied);
         }
 
+        private void OnDied()
+        {
+            enabled = false;
+            enemyHealth.onDie.RemoveListener(OnDied);
+        }
+        
         public void Update()
         {
             if (Paused)

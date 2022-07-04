@@ -13,7 +13,7 @@ namespace Game.Characters.Props
         [SerializeField] private int propCurrentHealth;
 
         [SerializeField] private UnityEvent onHurt;
-
+ 
         public int CurrentHealth => propCurrentHealth;
 
         public void Awake()
@@ -38,7 +38,7 @@ namespace Game.Characters.Props
             propCurrentHealth -= amount;
             if (propCurrentHealth <= 0)
             {
-                gameObject.SetActive(false);
+                
             }
             else
             {

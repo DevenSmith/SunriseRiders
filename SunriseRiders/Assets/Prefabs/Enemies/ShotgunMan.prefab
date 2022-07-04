@@ -624,6 +624,7 @@ MonoBehaviour:
   aimFrequency: {fileID: 11400000, guid: d7aaa8904f71f29459003861c7c39a21, type: 2}
   aimHeightDifference: {fileID: 11400000, guid: 2189ced0a589eda4d9a2f26bc9378e79, type: 2}
   aimNearnessDistance: {fileID: 11400000, guid: f5ed0c1329b73054794c8554ce0b42d6, type: 2}
+  enemyHealth: {fileID: 4346917599602442866}
   remainingDelay: 0
 --- !u!136 &6020559885132854141
 CapsuleCollider:
@@ -695,6 +696,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 4332646633297381222}
   playerDistanceToStartShooting: {fileID: 11400000, guid: e3b5e71b2061c294f907a54516207900, type: 2}
   shotDelay: 0
+  enemyHealth: {fileID: 0}
   bulletsToShoot: {fileID: 11400000, guid: b75b8e5aa3878f34b932da880997ac01, type: 2}
   maxSpreadAngle: {fileID: 11400000, guid: c421fed047aef8d4ba58c002ce12f436, type: 2}
 --- !u!114 &109766460

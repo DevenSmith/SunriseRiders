@@ -40,12 +40,11 @@ namespace Game.Health
 
         public void Hurt(int amount)
         {
-            if (invincible || amount <= 0)
+            if (invincible || amount <= 0 || characterCurrentHealth <= 0)
                 return;
             characterCurrentHealth -= amount;
             if (characterCurrentHealth <= 0)
             {
-                gameObject.SetActive(false);
                 onDie?.Invoke();
             }
             else
