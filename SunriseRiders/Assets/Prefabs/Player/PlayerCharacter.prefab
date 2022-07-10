@@ -2787,6 +2787,8 @@ MonoBehaviour:
   invincible: 0
   characterStartingHealth: {fileID: 11400000, guid: c311fa68ddc7b194dbed6749fab6f27c, type: 2}
   characterCurrentHealth: 0
+  immuneToDamageTypes:
+  - {fileID: 11400000, guid: 0e7009046f6c08f45b597d2d24b0e40d, type: 2}
   onDie:
     m_PersistentCalls:
       m_Calls: []

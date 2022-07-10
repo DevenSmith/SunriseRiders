@@ -90,6 +90,8 @@ MonoBehaviour:
   onDamageDealt:
     m_PersistentCalls:
       m_Calls: []
+  damageTypes:
+  - {fileID: 11400000, guid: 5a77374a36fe6b948b4ab3e4090c0863, type: 2}
 --- !u!1 &7196139709869583045
 GameObject:
   m_ObjectHideFlags: 0

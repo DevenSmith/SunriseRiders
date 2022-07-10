@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ca316f66cf132489a5bebf12736d1f, type: 3}
   m_Name: GunManHealth
   m_EditorClassIdentifier: 
-  intValue: 5
+  intValue: 2

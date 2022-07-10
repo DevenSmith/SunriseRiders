@@ -1,5 +1,7 @@
-﻿using Devens;
+﻿using System.Collections.Generic;
+using Devens;
 using Game.Damage;
+using Game.Health.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +13,8 @@ namespace Game.Health
         
         [SerializeField] private IntSO characterStartingHealth;
         [SerializeField] private int characterCurrentHealth;
+
+        public List<DamageTypeSO> immuneToDamageTypes = new List<DamageTypeSO>();
 
         public UnityEvent onDie;
         public UnityEvent onHurt;
@@ -24,8 +28,19 @@ namespace Game.Health
             characterCurrentHealth = characterStartingHealth.Value;
         }
 
-        public void TakeDamage(int amount)
+        public void TakeDamage(int amount, List<DamageTypeSO> damageTypes = null)
         {
+            if (damageTypes != null && damageTypes.Count > 0)
+            {
+                foreach (var immuneType in immuneToDamageTypes)
+                {
+                    if (damageTypes.Contains(immuneType))
+                    {
+                        return;
+                    }
+                }
+            }
+            
             Hurt(amount);
         }
 

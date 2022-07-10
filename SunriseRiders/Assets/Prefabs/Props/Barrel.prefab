@@ -100,6 +100,8 @@ MonoBehaviour:
   invincible: 0
   characterStartingHealth: {fileID: 11400000, guid: 452f3fa82d0d39a4b810ab1a6188d2f6, type: 2}
   characterCurrentHealth: 0
+  immuneToDamageTypes:
+  - {fileID: 11400000, guid: 5a77374a36fe6b948b4ab3e4090c0863, type: 2}
   onDie:
     m_PersistentCalls:
       m_Calls: []
@@ -156,8 +158,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6020805580717336108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
-  m_LocalScale: {x: 0.49, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.197, z: 0}
+  m_LocalScale: {x: 0.49, y: 5.17, z: 3.41}
   m_Children: []
   m_Father: {fileID: 4264914351873148029}
   m_RootOrder: 0

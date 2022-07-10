@@ -1,4 +1,7 @@
-﻿namespace Game.Health
+﻿using System.Collections.Generic;
+using Game.Health.ScriptableObjects;
+
+namespace Game.Health
 {
     public interface IHealth
     {

@@ -483,11 +483,11 @@ GameObject:
   - component: {fileID: 7991322998932332272}
   - component: {fileID: 8634582648260493214}
   - component: {fileID: 7648255556659223088}
-  - component: {fileID: 3359510865639189368}
   - component: {fileID: 4616117816511468706}
   - component: {fileID: 4702154396241287799}
   - component: {fileID: 3811326015261989357}
   - component: {fileID: 1367995137092889309}
+  - component: {fileID: 1602331717386965019}
   m_Layer: 10
   m_Name: GunMan
   m_TagString: Untagged
@@ -540,7 +540,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43, y: 1.78, z: 7.44}
+  m_Size: {x: 0.43, y: 1.7, z: 7.44}
   m_Center: {x: 0, y: 0.74, z: 0}
 --- !u!114 &8634582648260493214
 MonoBehaviour:
@@ -579,20 +579,6 @@ MonoBehaviour:
   aimNearnessDistance: {fileID: 11400000, guid: f5ed0c1329b73054794c8554ce0b42d6, type: 2}
   enemyHealth: {fileID: 4702154396241287799}
   remainingDelay: 0
---- !u!136 &3359510865639189368
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793710984225667071}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!114 &4616117816511468706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,6 +608,8 @@ MonoBehaviour:
   invincible: 0
   characterStartingHealth: {fileID: 11400000, guid: 1d2ad091e34e12c48982d5c134a8792d, type: 2}
   characterCurrentHealth: 0
+  immuneToDamageTypes:
+  - {fileID: 11400000, guid: 5a77374a36fe6b948b4ab3e4090c0863, type: 2}
   onDie:
     m_PersistentCalls:
       m_Calls: []
@@ -668,6 +656,22 @@ MonoBehaviour:
   colliders:
   - {fileID: 7991322998932332272}
   rigidBody: {fileID: 793710984225667069}
+--- !u!114 &1602331717386965019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793710984225667071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0528746cfda4b3e449ddc6b513d2509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumVelocityAllowed: 1
+  ignoreXAxis: 0
+  ignoreYAxis: 1
+  ignoreZAxis: 0
 --- !u!1 &793972280257347473
 GameObject:
   m_ObjectHideFlags: 0

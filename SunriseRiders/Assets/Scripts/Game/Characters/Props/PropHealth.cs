@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Devens;
 using Game.Damage;
 using Game.Health;
+using Game.Health.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,7 +23,7 @@ namespace Game.Characters.Props
             propCurrentHealth = propStartingHealth.Value;
         }
 
-        public void TakeDamage(int amount)
+        public void TakeDamage(int amount, List<DamageTypeSO> damageTypes = null)
         {
             Hurt(amount);
         }
