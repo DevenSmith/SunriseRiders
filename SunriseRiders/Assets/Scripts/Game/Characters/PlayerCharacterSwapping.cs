@@ -1,31 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using Devens;
 using UnityEngine;
 
 namespace Game.Characters
 {
     public class PlayerCharacterSwapping : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> characters;
+        [SerializeField] private List<CharacterSet> characters;
         [SerializeField] private int characterIndex = 0;
-
-        [SerializeField] private List<Material> materials;
         [SerializeField] private int materialIndex = 0;
 
         private SkinnedMeshRenderer currentCharacterRenderer;
+        
+        [Serializable]
+        public struct CharacterSet
+        {
+            public GameObject character;
+            public AssetPackMaterialsSO materialSet;
+        }
         
         private void Awake()
         {
             for (var i = 0; i < characters.Count; i++)
             {
-                if (characters[i].activeInHierarchy)
+                if (characters[i].character.activeInHierarchy)
                 {
                     characterIndex = i;
                     return;
                 }
             }
 
-            currentCharacterRenderer = characters[characterIndex].GetComponent<SkinnedMeshRenderer>();
+            currentCharacterRenderer = characters[characterIndex].character.GetComponent<SkinnedMeshRenderer>();
         }
 
         public void Update()
@@ -52,7 +58,7 @@ namespace Game.Characters
         {
             foreach (var character in characters)
             {
-                character.SetActive(false);
+                character.character.SetActive(false);
             }
 
             if (characterIndex < 0)
@@ -64,20 +70,21 @@ namespace Game.Characters
             {
                 characterIndex = 0;
             }
-            characters[characterIndex].SetActive(true);
-            currentCharacterRenderer = characters[characterIndex].GetComponent<SkinnedMeshRenderer>();
+            characters[characterIndex].character.SetActive(true);
+            currentCharacterRenderer = characters[characterIndex].character.GetComponent<SkinnedMeshRenderer>();
+            materialIndex = 0;
         }
 
         private void ChangeSkin()
         {
             materialIndex++;
 
-            if (materialIndex >= materials.Count)
+            if (materialIndex >= characters[characterIndex].materialSet.Materials.Count)
             {
                 materialIndex = 0;
             }
 
-            currentCharacterRenderer.material = materials[materialIndex];
+            currentCharacterRenderer.material = characters[characterIndex].materialSet.Materials[materialIndex];
         }
     }
 }
