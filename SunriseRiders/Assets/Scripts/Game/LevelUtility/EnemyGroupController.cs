@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.LevelUtility
@@ -9,6 +10,14 @@ namespace Game.LevelUtility
     public class EnemyGroupController : MonoBehaviour
     {
         [SerializeField] private List<GameObject> groupEntitiesToTurnOn = new List<GameObject>();
+
+        public void Start()
+        {
+            foreach (var groupObject in groupEntitiesToTurnOn)
+            {
+                groupObject.SetActive(false);
+            }
+        }
 
         public void OnTriggerEnter(Collider other)
         {
