@@ -10,9 +10,10 @@ namespace Game.Characters.Shooting.WeaponShooting
         
         private float spawnPointOriginalRotation;
 
-        private void Start()
+        protected override void Start()
         {
-            spawnPointOriginalRotation = bulletSpawnPoint.eulerAngles.x;
+            base.Start();
+            spawnPointOriginalRotation = bulletSpawnPoint.eulerAngles.z;
         }
 
         public override void Shoot()
@@ -24,13 +25,12 @@ namespace Game.Characters.Shooting.WeaponShooting
             {
                 var rotation = spawnPointOriginalRotation + Random.Range(-maxSpreadAngle, maxSpreadAngle);
                 var eulerAngles = bulletSpawnPoint.eulerAngles;
-                eulerAngles.x = rotation;
-                bulletSpawnPoint.eulerAngles = eulerAngles;
+                eulerAngles.z = rotation;
                 
                 var bullet = ObjectPooler.Instance.GetPooledObject(bulletPrefabName.Value);
                 bullet.SetActive(true);
                 bullet.transform.position = bulletSpawnPoint.position;
-                bullet.transform.rotation = bulletSpawnPoint.rotation;
+                bullet.transform.eulerAngles = eulerAngles;
             }
             shotDelay = delayBetweenShots.Value;
 
