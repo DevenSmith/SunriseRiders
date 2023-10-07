@@ -36,8 +36,9 @@ namespace Game.Health
             runningCoroutine = StartCoroutine(StrobeRoutine());
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
+            base.OnDestroy();
             if (runningCoroutine != null)
             {
                 StopCoroutine(runningCoroutine);

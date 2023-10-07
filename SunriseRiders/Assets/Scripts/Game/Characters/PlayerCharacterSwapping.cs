@@ -27,11 +27,10 @@ namespace Game.Characters
                 if (characters[i].character.activeInHierarchy)
                 {
                     characterIndex = i;
+                    currentCharacterRenderer = characters[characterIndex].character.GetComponent<SkinnedMeshRenderer>();
                     return;
                 }
             }
-
-            currentCharacterRenderer = characters[characterIndex].character.GetComponent<SkinnedMeshRenderer>();
         }
 
         public void Update()
