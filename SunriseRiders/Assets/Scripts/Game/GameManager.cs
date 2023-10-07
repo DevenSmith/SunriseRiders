@@ -4,6 +4,6 @@ namespace Game
 {
     public static class GameManager
     {
-        public static CharacterReference PlayerReference;
+        public static PlayerCharacterReference PlayerReference;
     }
 }

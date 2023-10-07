@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Game
@@ -30,6 +29,7 @@ namespace Game
             }
 
             Debug.Log(GameManager.PlayerReference != null ? "Succeeded PlayerSetUp" : "Failed PlayerSetup");
+            GameManager.PlayerReference.playerInput.UnlockPlayerInput();
         }
     }
 }
