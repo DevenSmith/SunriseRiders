@@ -1,20 +1,12 @@
 ﻿using Devens;
 using UnityEngine;
 
-namespace Game.Characters.Shooting.WeaponShooting
+namespace Game.Characters.Shooting.Weapons_Shooting
 {
     public class ShotgunShooting : Weapons_Shooting.WeaponShooting
     {
         [SerializeField] private float maxSpreadAngle = 15.0f;
         [SerializeField] private int bulletsPerShot = 5;
-        
-        private float spawnPointOriginalRotation;
-
-        protected override void Start()
-        {
-            base.Start();
-            spawnPointOriginalRotation = bulletSpawnPoint.eulerAngles.z;
-        }
 
         public override void Shoot()
         {
@@ -23,7 +15,7 @@ namespace Game.Characters.Shooting.WeaponShooting
 
             for (int i = 0; i < bulletsPerShot; i++)
             {
-                var rotation = spawnPointOriginalRotation + Random.Range(-maxSpreadAngle, maxSpreadAngle);
+                var rotation = bulletSpawnPoint.eulerAngles.z + Random.Range(-maxSpreadAngle, maxSpreadAngle);
                 var eulerAngles = bulletSpawnPoint.eulerAngles;
                 eulerAngles.z = rotation;
                 

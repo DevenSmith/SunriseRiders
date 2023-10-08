@@ -28,12 +28,27 @@ namespace Game.Characters.Shooting
          {
             currentWeapon.gameObject.SetActive(false);
          }
-
          currentWeapon = weaponShooting;
-         leftHandIK.data.target = weaponShooting.LeftHandRef;
-         rightHandIK.data.target = weaponShooting.RightHandRef;
+
+         SetupHand(weaponShooting.LeftHandRef, leftHandIK);
+         SetupHand(weaponShooting.RightHandRef, rightHandIK);
+         
          rigBuilder.Build();
          currentWeapon.gameObject.SetActive(true);
+      }
+
+      private void SetupHand(Transform handRef, TwoBoneIKConstraint handIK)
+      {
+         if (handRef != null)
+         {
+            handIK.weight = 1.0f;
+            handIK.data.target = handRef;
+         }
+         else
+         {
+            handIK.weight = 0.0f;
+            handIK.data.target = handRef;
+         }
       }
       
 

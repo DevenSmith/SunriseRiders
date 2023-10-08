@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Game.Characters.Shooting.WeaponShooting
+﻿namespace Game.Characters.Shooting.Weapons_Shooting
 {
     public class RifleShooting : Weapons_Shooting.WeaponShooting
     {
