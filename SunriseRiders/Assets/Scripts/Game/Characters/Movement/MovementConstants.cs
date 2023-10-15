@@ -2,7 +2,6 @@
 
 namespace Game.Characters.Movement
 {
-   
     
     public static class MovementConstants
     {
@@ -12,6 +11,7 @@ namespace Game.Characters.Movement
         public const string Hurt = "HURT";
         public const string Dying = "DYING";
         public const string Jumping = "JUMPING";
+        public const string Crouching = "CROUCHING";
         public const string Falling = "FALLING";
     }
 }

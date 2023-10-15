@@ -15,10 +15,13 @@ namespace Game.Characters.GameInput
 
             _movementVector.x = GetAxis("Horizontal");
             _aimVector.y = GetAxis("Vertical");
+            
             if (GetAxis("Jump") > 0)
             {
                 jump = true;
             }
+
+            crouch = GetAxis("Crouch") > 0;
             shoot = GetAxis("Fire1") > 0;
         }
 

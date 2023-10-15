@@ -8,11 +8,18 @@ namespace Game.Characters.Movement
 
         [SerializeField] private Animator animator;
         [SerializeField] private Transform playerCharacterTransform;
+        [SerializeField] private Transform weaponPivotTransform;
+        [SerializeField] private Transform defaultPivotHeightTransform;
+        [SerializeField] private Transform crouchPivotHeightTransform;
+        [SerializeField] private Collider defaultCollider;
+        [SerializeField] private Collider crouchedCollider;
         [SerializeField] private float verticalMovementAnimationTriggerBuffer = 0.25f;
         private bool IsMovementFacingRight =>
             movement.facing == Facing.Right || movement.facing == Facing.RightDown ||
             movement.facing == Facing.RightUp;
 
+        private bool wasCrouching = false;
+        
         private void Awake()
         {
             if (movement == null)
@@ -39,6 +46,22 @@ namespace Game.Characters.Movement
 
         private void Update()
         {
+            animator.SetBool(MovementConstants.Crouching, movement.IsCrouching);
+
+            if (!wasCrouching && movement.IsCrouching)
+            {
+                weaponPivotTransform.position = crouchPivotHeightTransform.position;
+                crouchedCollider.enabled = true;
+                defaultCollider.enabled = false;
+            }
+
+            if (wasCrouching && !movement.IsCrouching)
+            {
+                weaponPivotTransform.position = defaultPivotHeightTransform.position;
+                crouchedCollider.enabled = false;
+                defaultCollider.enabled = true;
+            }
+
             animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
 
             if (movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
@@ -56,6 +79,8 @@ namespace Game.Characters.Movement
                 animator.SetBool(MovementConstants.Jumping, false);
                 animator.SetBool(MovementConstants.Falling, false);
             }
+
+            wasCrouching = movement.IsCrouching;
         }
 
         private void OnChangedDirection()
