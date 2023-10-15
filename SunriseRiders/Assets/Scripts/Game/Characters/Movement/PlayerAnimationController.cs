@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.U2D;
+using UnityEngine;
 
 namespace Game.Characters.Movement
 {
@@ -11,8 +12,11 @@ namespace Game.Characters.Movement
         [SerializeField] private Transform weaponPivotTransform;
         [SerializeField] private Transform defaultPivotHeightTransform;
         [SerializeField] private Transform crouchPivotHeightTransform;
-        [SerializeField] private Collider defaultCollider;
-        [SerializeField] private Collider crouchedCollider;
+        [SerializeField] private CapsuleCollider playerCollider;
+        [SerializeField] private float defaultColliderCenter;
+        [SerializeField] private float defaultColliderHeight;
+        [SerializeField] private float crouchColliderCenter;
+        [SerializeField] private float crouchColliderHeight;
         [SerializeField] private float verticalMovementAnimationTriggerBuffer = 0.25f;
         private bool IsMovementFacingRight =>
             movement.facing == Facing.Right || movement.facing == Facing.RightDown ||
@@ -51,15 +55,19 @@ namespace Game.Characters.Movement
             if (!wasCrouching && movement.IsCrouching)
             {
                 weaponPivotTransform.position = crouchPivotHeightTransform.position;
-                crouchedCollider.enabled = true;
-                defaultCollider.enabled = false;
+                var center = playerCollider.center;
+                center.y = crouchColliderCenter;
+                playerCollider.center = center;
+                playerCollider.height = crouchColliderHeight;
             }
 
             if (wasCrouching && !movement.IsCrouching)
             {
                 weaponPivotTransform.position = defaultPivotHeightTransform.position;
-                crouchedCollider.enabled = false;
-                defaultCollider.enabled = true;
+                var center = playerCollider.center;
+                center.y = defaultColliderCenter;
+                playerCollider.center = center;
+                playerCollider.height = defaultColliderHeight;
             }
 
             animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
