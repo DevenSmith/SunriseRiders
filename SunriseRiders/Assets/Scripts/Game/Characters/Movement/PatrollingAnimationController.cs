@@ -33,12 +33,10 @@ namespace Game.Characters.Movement
         {
             if (patrolState == Patrol.PatrolStates.Idle)
             {
-                animator.SetBool(MovementConstants.Idle, true);
                 animator.SetBool(MovementConstants.Running, false);
             }
             else
             {
-                animator.SetBool(MovementConstants.Idle, false);
                 animator.SetBool(MovementConstants.Running, true);
             }
         }
