@@ -9765,6 +9765,7 @@ MonoBehaviour:
   characterHealth: {fileID: 297467729}
   characterCollider: {fileID: 67439074570669055}
   playerInput: {fileID: 0}
+  weaponSwapper: {fileID: 0}
 --- !u!114 &3361558570920551133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9778,9 +9779,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 3491485187037495734}
-  - {fileID: 785799961959357518}
-  - {fileID: 4347542768032485372}
+  - name: {fileID: 11400000, guid: 375dca928b26d2d47a4c1f4b2039fe65, type: 2}
+    weaponShooting: {fileID: 3491485187037495734}
+  - name: {fileID: 11400000, guid: 668f257c5e38195419efd0478b12f7d2, type: 2}
+    weaponShooting: {fileID: 785799961959357518}
+  - name: {fileID: 11400000, guid: 6f118dc9323335f4098155204c85ae48, type: 2}
+    weaponShooting: {fileID: 4347542768032485372}
   weaponIndex: 0
   playerShooting: {fileID: 7342329752712319847}
 --- !u!136 &67439074570669055
