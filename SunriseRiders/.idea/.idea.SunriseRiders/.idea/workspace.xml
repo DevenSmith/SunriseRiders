@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576a3ce5-0a82-4634-b86a-857544dca75c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SunriseRiders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SunriseRiders/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Down.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Left.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Right.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Up.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Arrow Up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Character Panel.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Character Panel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Character Select.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Character Select.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Exit Game.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Exit Game.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Load Game.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Load Game.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Options.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Options.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Start.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Start.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Title.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main Menu/Title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main_Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main_Menu.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +105,7 @@
       <workItem from="1699763320418" duration="5985000" />
       <workItem from="1700112866456" duration="1344000" />
       <workItem from="1701559563226" duration="2289000" />
-      <workItem from="1713132523698" duration="1378000" />
+      <workItem from="1713132523698" duration="1975000" />
     </task>
     <servers />
   </component>
