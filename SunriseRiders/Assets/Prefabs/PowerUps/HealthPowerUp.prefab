@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4554648558586006535}
   - component: {fileID: 4575715497699916585}
   - component: {fileID: 4568589811342497625}
+  - component: {fileID: 7054222326245413519}
   m_Layer: 12
   m_Name: HealthPowerUp
   m_TagString: Untagged
@@ -92,7 +93,7 @@ MeshCollider:
   m_GameObject: {fileID: 4568091490428321879}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -109,4 +110,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeffc503d06d3d043a09eed766d805fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPowerUpApplied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568091490428321879}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   powerUpType: {fileID: 11400000, guid: 4268bac3f6ed6534d95aa1cebd87d860, type: 2}
+--- !u!65 &7054222326245413519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568091490428321879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13966751, y: 0.359087, z: 0.09875105}
+  m_Center: {x: -0.0000019073486, y: 0.1795435, z: 0.0000000055879354}
