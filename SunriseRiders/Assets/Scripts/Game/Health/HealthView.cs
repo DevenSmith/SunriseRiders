@@ -1,4 +1,5 @@
 ﻿using Devens;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ namespace Game.Health
     public class HealthView : MonoBehaviour
     {
         [SerializeField] private Slider healthSlider;
+        [SerializeField] private float maxDuration = 1.0f;
         
         private Health _health;
         private Transform _gamePositionTransform;
@@ -47,7 +49,11 @@ namespace Game.Health
 
         private void UpdateHealthAmount()
         {
-            healthSlider.value = (float)_health.CurrentHealth / (float)_health.StartingHealth;
+            var newValue = (float) _health.CurrentHealth / (float) _health.StartingHealth;
+            var change = Mathf.Abs(healthSlider.value - newValue);
+            DOTween.To(() => healthSlider.value, x => healthSlider.value = x, newValue, maxDuration * change);
+            
+            //healthSlider.value = (float)_health.CurrentHealth / (float)_health.StartingHealth;
         }
 
         private void HideHealthAmount()

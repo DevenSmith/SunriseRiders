@@ -1,5 +1,6 @@
 ﻿using System;
 using Devens;
+using DG.Tweening;
 using Game.Characters.GameInput;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ namespace Game.UI
     public class PlayerHealthBar : MonoBehaviour
     {
         [SerializeField] private Slider healthBarSlider;
+        [SerializeField] private float maxDuration = 1.0f;
         
         private Health.Health _playerHealth;
 
@@ -29,7 +31,9 @@ namespace Game.UI
 
         private void UpdateHealthBar()
         {
-            healthBarSlider.value = (float)_playerHealth.CurrentHealth / (float)_playerHealth.StartingHealth;
+            var newValue = (float) _playerHealth.CurrentHealth / (float) _playerHealth.StartingHealth;
+            var change = Mathf.Abs(healthBarSlider.value - newValue);
+            DOTween.To(() => healthBarSlider.value, x => healthBarSlider.value = x, newValue, maxDuration * change);
         }
     }
 }
