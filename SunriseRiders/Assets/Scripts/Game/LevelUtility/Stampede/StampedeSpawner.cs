@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Devens;
+using Game.GameCamera;
 using UnityEngine;
 
 namespace Game.LevelUtility.Stampede
@@ -25,23 +26,31 @@ namespace Game.LevelUtility.Stampede
         
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject != GameManager.PlayerReference.characterObject)
+            if (triggered || other.gameObject != GameManager.PlayerReference.characterObject)
             {
                 return;
             }
 
-            if (!triggered)
-            {
-                stampedeSpawnRoutine = StartCoroutine(SpawnStampede());
-            }
+            triggered = true;
+            stampedeSpawnRoutine = StartCoroutine(SpawnStampede());
         }
 
         private IEnumerator SpawnStampede()
         {
+            var shakeDur = 0.0f;
+            foreach (var element in StampedeElements)
+            {
+                shakeDur += element.delayBeforeNextElement + 1.0f;
+            }
+            
+            CameraController.Instance.ShakeCamera(shakeDur);
+            
             var delay = 0.0f;
             foreach (var element in StampedeElements)
             {
-                Instantiate(element.stampedeElementPrefab, spawnPoint).GetComponent<StampedeMovement>().Initialize(element.speed.Value * direction);
+                var obj = Instantiate(element.stampedeElementPrefab, spawnPoint);
+                obj.GetComponent<StampedeMovement>().Initialize(element.speed.Value * direction);
+                obj.transform.position = spawnPoint.position;
 
                 while (Paused)
                 {

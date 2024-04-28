@@ -30,7 +30,6 @@ public class StampedeDamager : PausableMonoBehavior, IDamager
     {
         if ((Health) damageable != GameManager.PlayerReference.characterHealth)
         {
-            Debug.LogError(name + " Damaged something other than the player!");
             return;
         }
         

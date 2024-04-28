@@ -6,54 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="576a3ce5-0a82-4634-b86a-857544dca75c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SunriseRiders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SunriseRiders/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/GuyAnimationController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/GuyAnimationController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Jump Loop.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Jump Loop.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Jump Up.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Jump Up.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Rifle Idle.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Rifle Idle.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Run Forward.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/Mixamo_POLYGON_Guy_Naked@Run Forward.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/X Bot@Crouch Idle.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/X Bot@Crouch Idle.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/X Bot@Crouched Run.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Guy/X Bot@Crouched Run.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel/BarrelAnimatorController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel/BarrelAnimatorController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel/BarrelHit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel/BarrelHit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel/BarrelIdle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Props/Barrel/BarrelIdle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerPistolBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerPistolBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerRifleBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerRifleBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerShotgunBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BulletMaterials/PlayerShotgunBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/DebugMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/DebugMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/GunManBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/GunManBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PhysicsMaterials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PhysicsMaterials/Friction.physicMaterial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PhysicsMaterials/Friction.physicMaterial.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShotgunManBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShotgunManBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/VFXMaterials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/VFXMaterials/ExplosionMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/VFXMaterials/ExplosionMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stampede/StampedeSingle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Stampede/StampedeSingle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stampede/StampedeSingle.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Stampede/StampedeSingle.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Stampede/StampedeMoveSpeed.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Stampede/StampedeMoveSpeed.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameCamera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameCamera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeDamager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeDamager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,10 +58,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29604">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26684">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="29604" />
+      <option name="pid" value="26684" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -155,7 +114,8 @@
       <workItem from="1701559563226" duration="2289000" />
       <workItem from="1713132523698" duration="1975000" />
       <workItem from="1713637054038" duration="2320000" />
-      <workItem from="1714250650420" duration="3962000" />
+      <workItem from="1714250650420" duration="4314000" />
+      <workItem from="1714325153121" duration="3820000" />
     </task>
     <servers />
   </component>
@@ -167,63 +127,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeDamager.cs</url>
-          <line>56</line>
-          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\LevelUtility\Stampede\StampedeDamager.cs" initialLine="56" containingFunctionPresentation="method 'TurnGroundBackOnRoutine'">
-            <startOffsets>
-              <option value="1547" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1577" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeDamager.cs</url>
-          <line>58</line>
-          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\LevelUtility\Stampede\StampedeDamager.cs" initialLine="58" containingFunctionPresentation="method 'TurnGroundBackOnRoutine'">
-            <startOffsets>
-              <option value="1600" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1618" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeDamager.cs</url>
-          <line>62</line>
-          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\LevelUtility\Stampede\StampedeDamager.cs" initialLine="62" containingFunctionPresentation="method 'TurnGroundBackOnRoutine'">
-            <startOffsets>
-              <option value="1675" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1699" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Game/LevelUtility/Stampede/StampedeDamager.cs</url>
-          <line>66</line>
-          <properties documentPath="D:\Repos\SunriseRiders\SunriseRiders\Assets\Scripts\Game\LevelUtility\Stampede\StampedeDamager.cs" initialLine="66" containingFunctionPresentation="method 'TurnGroundBackOnRoutine'">
-            <startOffsets>
-              <option value="1733" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1771" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
