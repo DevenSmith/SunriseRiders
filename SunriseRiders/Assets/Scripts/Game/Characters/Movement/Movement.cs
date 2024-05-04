@@ -3,6 +3,7 @@ using Devens;
 using Game.Characters.GameInput;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace Game.Characters.Movement
@@ -22,6 +23,8 @@ namespace Game.Characters.Movement
         [SerializeField] private FloatSO jumpForce;
         [SerializeField] private CharacterInput characterInput;
         [SerializeField] private LayerMask whatIsGround;
+
+        public UnityEvent onJumped;
         
         private Rigidbody _characterRb;
         private Vector2 _movementVelocity;
@@ -71,6 +74,7 @@ namespace Game.Characters.Movement
                 if (isGrounded)
                 {
                     _movementVelocity.y = jumpForce.Value;
+                    onJumped?.Invoke();
                 }
             }
             

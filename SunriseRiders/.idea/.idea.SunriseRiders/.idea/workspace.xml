@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="576a3ce5-0a82-4634-b86a-857544dca75c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SunriseRiders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SunriseRiders/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stampede/DustParticles.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Stampede/DustParticles.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/Movement/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/Movement/Movement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +17,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d1d5a0a7c19404a97ceefd28864629e6c00/df/891e089c/Input.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRunner/EditModeRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bfc774e39f154e8bacc0aae5397b53ae128600/8c/2a2b6a54/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/979389d683c843dd950007edf7b7245718c00/0b/1a1417c6/TwoBoneIKConstraint.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -51,10 +53,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26684">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26684" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -109,6 +111,7 @@
       <workItem from="1713637054038" duration="2320000" />
       <workItem from="1714250650420" duration="4314000" />
       <workItem from="1714325153121" duration="4415000" />
+      <workItem from="1714849072104" duration="315000" />
     </task>
     <servers />
   </component>
