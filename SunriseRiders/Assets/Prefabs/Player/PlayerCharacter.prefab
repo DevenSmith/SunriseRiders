@@ -9956,11 +9956,11 @@ MonoBehaviour:
   groundCheckRadius: {fileID: 11400000, guid: ee811a2f03d03d54e89577a05b271bf0, type: 2}
   groundCheckPosition: {fileID: 5075493519074500923}
   movementSpeed: {fileID: 11400000, guid: faa71e5d28e9e1d419346d595adbbdc8, type: 2}
-  jumpForce: {fileID: 11400000, guid: c489921ea12d9b04a86b54724a3adcb9, type: 2}
   characterInput: {fileID: 7342329752712319844}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  jumpForce: {fileID: 11400000, guid: c489921ea12d9b04a86b54724a3adcb9, type: 2}
   onJumped:
     m_PersistentCalls:
       m_Calls:
@@ -9976,6 +9976,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  jumpSoundClipSO: {fileID: 11400000, guid: fd1398f2ca1fa354aaca1d239dfcfc8c, type: 2}
+  stepInterval: 0.25
+  walkSoundClipSO: {fileID: 11400000, guid: 888b7f2de3bfdb240bc91fceaf2cc36c, type: 2}
 --- !u!114 &7342329752712319844
 MonoBehaviour:
   m_ObjectHideFlags: 0
