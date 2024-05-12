@@ -1,3 +1,4 @@
+using Devens;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Game.Effects
     {
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private bool spawnAsChild = true;
-        [SerializeField] private GameObject particleSystemPrefab;
+        [SerializeField] private GameObjectSO particleSystemPrefab;
         
         private void Awake()
         {
@@ -18,7 +19,7 @@ namespace Game.Effects
         [UsedImplicitly]
         public void SpawnParticles()
         {
-            var obj = Instantiate(particleSystemPrefab, spawnPoint.position, particleSystemPrefab.transform.rotation);
+            var obj = Instantiate(particleSystemPrefab.Value, spawnPoint.position, particleSystemPrefab.Value.transform.rotation);
             if (spawnAsChild)
             {
                 obj.transform.SetParent(spawnPoint);

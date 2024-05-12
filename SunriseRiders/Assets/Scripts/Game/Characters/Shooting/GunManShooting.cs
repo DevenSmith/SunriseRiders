@@ -2,6 +2,7 @@
 using System.IO.IsolatedStorage;
 using Devens;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Characters.Shooting
 {
@@ -18,6 +19,8 @@ namespace Game.Characters.Shooting
         protected Transform _enemyTransform;
         protected Transform _playerTransform;
         protected Transform _playerTargetTransform;
+
+        public UnityEvent onShoot;
         
         private bool CanStartShooting => Mathf.Abs((_enemyTransform.position - _playerTransform.position).magnitude) < playerDistanceToStartShooting.Value;
 
@@ -66,6 +69,8 @@ namespace Game.Characters.Shooting
             bullet.SetActive(true);
             bullet.transform.position = position;
             bullet.transform.rotation = bulletSpawnPoint.rotation;
+            
+            onShoot?.Invoke();
         }
     }
 }

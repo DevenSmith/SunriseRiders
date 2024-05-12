@@ -1,5 +1,6 @@
 ﻿using Devens;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Characters.Shooting.Weapons_Shooting
 {
@@ -20,6 +21,8 @@ namespace Game.Characters.Shooting.Weapons_Shooting
         public Transform LeftHandRef => leftHandRef;
         public Transform RightHandRef => rightHandRef;
 
+        public UnityEvent onShoot;
+
         private void Update()
         {
             if (shotDelay > 0.0f)
@@ -38,6 +41,8 @@ namespace Game.Characters.Shooting.Weapons_Shooting
             bullet.transform.position = bulletSpawnPoint.position;
             bullet.transform.rotation = bulletSpawnPoint.rotation;
             shotDelay = delayBetweenShots.Value;
+            
+            onShoot?.Invoke();
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Game.Characters.Shooting
             }
 
             bulletSpawnPoint.eulerAngles = originalAngle;
+            onShoot?.Invoke();
         }
     }
 }
