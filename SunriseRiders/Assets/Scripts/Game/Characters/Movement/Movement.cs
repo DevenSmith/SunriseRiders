@@ -15,6 +15,7 @@ namespace Game.Characters.Movement
         public bool isGrounded = false;
 
         public bool IsCrouching => characterInput.crouch;
+        public FloatSO crouchMovementModifier;
         public Vector2 MovementVector2 => _movementVelocity;
 
         [SerializeField] private FloatSO groundCheckRadius;
@@ -74,6 +75,11 @@ namespace Game.Characters.Movement
             isGrounded = Physics.OverlapSphere(groundCheckPosition.position, groundCheckRadius.Value, whatIsGround).Length > 0;
             
             _movementVelocity.x = characterInput.MovementVector.x * movementSpeed.Value;
+            if (IsCrouching)
+            {
+                _movementVelocity.x *= crouchMovementModifier.Value;
+            }
+            
 
             if (isGrounded && Mathf.Abs(_movementVelocity.x) > 0.0f)
             {

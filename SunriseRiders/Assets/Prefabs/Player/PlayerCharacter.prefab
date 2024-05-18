@@ -9434,6 +9434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0008bb5388938b34bb4aac4afa7461fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRandomizeSkinOnStart: 1
   characters:
   - character: {fileID: 7341052603821887377}
     materialSet: {fileID: 11400000, guid: 5099e16d58273f9499a6a7fffedcb70e, type: 2}
@@ -9953,6 +9954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facing: 0
   isGrounded: 0
+  crouchMovementModifier: {fileID: 11400000, guid: bcf4fd23da22d04448441c2ae8674c56, type: 2}
   groundCheckRadius: {fileID: 11400000, guid: ee811a2f03d03d54e89577a05b271bf0, type: 2}
   groundCheckPosition: {fileID: 5075493519074500923}
   movementSpeed: {fileID: 11400000, guid: faa71e5d28e9e1d419346d595adbbdc8, type: 2}
@@ -10153,6 +10155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533aa634bed959b4d9782ac277d15e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldRandomizeWeaponOnStart: 1
   weapons:
   - name: {fileID: 11400000, guid: 375dca928b26d2d47a4c1f4b2039fe65, type: 2}
     weaponShooting: {fileID: 3491485187037495734}
