@@ -4,6 +4,7 @@ using Devens;
 using Game.Characters.Shooting;
 using Game.Characters.Shooting.Weapons_Shooting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game.Characters
 {
@@ -15,11 +16,24 @@ namespace Game.Characters
             public StringSO name;
             public WeaponShooting weaponShooting;
         }
+
+        [SerializeField] private bool shouldRandomizeWeaponOnStart = true;
+        
         
         [SerializeField] private List<Weapon> weapons;
         [SerializeField] private int weaponIndex;
 
         [SerializeField] private PlayerShooting playerShooting;
+
+        public void Start()
+        {
+            if (shouldRandomizeWeaponOnStart)
+            {
+                weaponIndex = Random.Range(0, weapons.Count);
+                SetWeapon(weaponIndex);
+            }
+        }
+
         public void Update()
         {
             if (Input.GetButtonDown("NextWeapon"))

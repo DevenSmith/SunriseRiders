@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using Devens;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game.Characters
 {
     public class PlayerCharacterSwapping : MonoBehaviour
     {
+        [SerializeField] private bool shouldRandomizeSkinOnStart = true;
+        
         [SerializeField] private List<CharacterSet> characters;
         [SerializeField] private int characterIndex = 0;
         [SerializeField] private int materialIndex = 0;
@@ -30,6 +33,16 @@ namespace Game.Characters
                     currentCharacterRenderer = characters[characterIndex].character.GetComponent<SkinnedMeshRenderer>();
                     return;
                 }
+            }
+        }
+
+        private void Start()
+        {
+            if (shouldRandomizeSkinOnStart)
+            {
+                characterIndex = Random.Range(0, characters.Count);
+                ChangeCharacter();
+                materialIndex = Random.Range(0, characters[characterIndex].materialSet.Materials.Count);
             }
         }
 
@@ -82,7 +95,12 @@ namespace Game.Characters
             {
                 materialIndex = 0;
             }
+            
+            SetSkin();
+        }
 
+        private void SetSkin()
+        {
             currentCharacterRenderer.material = characters[characterIndex].materialSet.Materials[materialIndex];
         }
     }
