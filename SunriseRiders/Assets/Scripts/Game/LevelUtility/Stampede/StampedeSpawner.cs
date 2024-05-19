@@ -17,12 +17,12 @@ namespace Game.LevelUtility.Stampede
             public float delayBeforeNextElement = 1.0f;
         }
 
-        public List<StampedeElement> StampedeElements = new List<StampedeElement>();
-        public float direction;
-        public Transform spawnPoint;
+        [SerializeField] private List<StampedeElement> StampedeElements = new List<StampedeElement>();
+        [SerializeField] private float direction;
+        [SerializeField] private Transform spawnPoint;
         
         private Coroutine stampedeSpawnRoutine;
-        private bool triggered = false;
+        [SerializeField] private bool triggered = false;
         
         public void OnTriggerEnter(Collider other)
         {
