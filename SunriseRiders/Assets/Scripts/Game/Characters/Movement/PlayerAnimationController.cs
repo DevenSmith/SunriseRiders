@@ -72,12 +72,12 @@ namespace Game.Characters.Movement
 
             animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
 
-            if (movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
+            if (!movement.isGrounded && movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
             {
                 animator.SetBool(MovementConstants.Jumping, true);
                 animator.SetBool(MovementConstants.Falling, false);
             }
-            else if (movement.MovementVector2.y < - verticalMovementAnimationTriggerBuffer)
+            else if (!movement.isGrounded && movement.MovementVector2.y < - verticalMovementAnimationTriggerBuffer)
             {
                 animator.SetBool(MovementConstants.Jumping, false);
                 animator.SetBool(MovementConstants.Falling, true);
