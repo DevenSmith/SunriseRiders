@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a0d3d11858f0b4a9a444da40930c7d, type: 3}
+  m_Name: Handgun 1 Firing Sound
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: b30d013d0d2bb9641b1d0a4c3d333e6f, type: 3}
+  - {fileID: 8300000, guid: 797d28e335d90254e8440e7eaaf0f4e9, type: 3}
+  looping: 0

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Devens;
 using UnityEngine;
@@ -13,6 +12,7 @@ namespace Game
         private List<AudioSource> loopingAudioSources;
         private List<AudioSource> playingAudioSources;
 
+        private bool paused = false;
         public void Awake()
         {
             if (Instance != null)
@@ -46,6 +46,13 @@ namespace Game
            return source;
         }
 
+        public void StopAudio(AudioSource source)
+        {
+            source.Stop();
+            playingAudioSources.Remove(source);
+            availableAudioSources.Push(source);
+        }
+
         private AudioSource GetSource()
         {
             if (availableAudioSources.Count > 0)
@@ -61,6 +68,34 @@ namespace Game
 
         private void Update()
         {
+            if (Paused)
+            {
+                if (!paused)
+                {
+                    foreach (var audio in playingAudioSources)
+                    {
+                        audio.Pause();
+                    }
+
+                    paused = true;
+                }
+
+                return;
+            }
+            else
+            {
+                if (paused)
+                {
+                    paused = false;
+                    
+                    foreach (var audio in playingAudioSources)
+                    {
+                        audio.Play();
+                    }
+                }
+            }
+        
+            
             for (int i = 0; i < playingAudioSources.Count; i++)
             {
                 if (!playingAudioSources[i].isPlaying)

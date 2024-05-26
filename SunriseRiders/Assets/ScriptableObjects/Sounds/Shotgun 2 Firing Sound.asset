@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a0d3d11858f0b4a9a444da40930c7d, type: 3}
+  m_Name: Shotgun 2 Firing Sound
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: d6b07f4ae3277964f9aa9bd1b29efdef, type: 3}
+  - {fileID: 8300000, guid: 0175f1f6a46667d42a2fdd15eba7e21b, type: 3}
+  - {fileID: 8300000, guid: fe5b11c8a4a9c464e9a9f73fb8ca0fd0, type: 3}
+  looping: 0
