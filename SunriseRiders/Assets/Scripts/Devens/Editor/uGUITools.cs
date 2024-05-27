@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public class uGUITools : MonoBehaviour {
+	#if UNITY_EDITOR
 	[MenuItem("uGUI/Anchors to Corners %[")]
 	static void AnchorsToCorners(){
 		RectTransform t = Selection.activeTransform as RectTransform;
@@ -27,4 +28,5 @@ public class uGUITools : MonoBehaviour {
 
 		t.offsetMin = t.offsetMax = new Vector2(0, 0);
 	}
+	#endif
 }

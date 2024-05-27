@@ -5,7 +5,6 @@ using Game;
 using Game.Damage;
 using Game.Health;
 using Game.Health.ScriptableObjects;
-using UnityEditor.U2D;
 using UnityEngine;
 
 public class StampedeDamager : PausableMonoBehavior, IDamager

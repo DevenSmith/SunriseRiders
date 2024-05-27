@@ -1,5 +1,4 @@
-﻿using UnityEditor.U2D;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Characters.Movement
 {
