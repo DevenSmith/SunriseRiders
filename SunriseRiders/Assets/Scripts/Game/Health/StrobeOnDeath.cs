@@ -19,6 +19,7 @@ namespace Game.Health
         [SerializeField] private Rigidbody rigidBody;
 
         private Coroutine runningCoroutine;
+        public UnityEvent onFinishStrobing;
         
         private void Awake()
         {
@@ -79,8 +80,8 @@ namespace Game.Health
                 }
                 yield return new WaitForEndOfFrame();
             }
+            onFinishStrobing?.Invoke();
             gameObject.SetActive(false);
-            yield break;
         }
 
         private void SetListActiveState(bool activeState)

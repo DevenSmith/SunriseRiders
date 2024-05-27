@@ -9512,6 +9512,7 @@ GameObject:
   - component: {fileID: 1002932979608175014}
   - component: {fileID: 3361558570920551133}
   - component: {fileID: 67439074570669055}
+  - component: {fileID: 5752991384133441855}
   m_Layer: 9
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -9728,8 +9729,23 @@ MonoBehaviour:
   - {fileID: 3598552817325486658}
   - {fileID: 7341807954338194869}
   colliders:
-  - {fileID: 0}
+  - {fileID: 67439074570669055}
   rigidBody: {fileID: 7342329752712319867}
+  onFinishStrobing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5752991384133441855}
+        m_TargetAssemblyTypeName: Game.LoadLevelComponent, GameScripts
+        m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1002932979608175014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9783,6 +9799,19 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &5752991384133441855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7342329752712319865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591388b296ad1564db086222ec5bde83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNameStringSo: {fileID: 11400000, guid: f0160a057a240254d9f0551e9ff8c4c2, type: 2}
 --- !u!1 &7342701844738595333
 GameObject:
   m_ObjectHideFlags: 0
