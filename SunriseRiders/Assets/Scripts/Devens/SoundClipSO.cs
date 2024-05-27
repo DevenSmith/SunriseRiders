@@ -8,6 +8,7 @@ namespace Devens
     {
         [SerializeField] private List<AudioClip> clips;
         [SerializeField] private bool looping = false;
+        public float volumeLevel = 1.0f;
 
         public bool isLooping
         {

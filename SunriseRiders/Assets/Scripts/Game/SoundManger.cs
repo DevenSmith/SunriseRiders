@@ -42,6 +42,7 @@ namespace Game
            }
 
            source.clip = sound.Value;
+           source.volume = sound.volumeLevel;
            source.Play();
            return source;
         }
