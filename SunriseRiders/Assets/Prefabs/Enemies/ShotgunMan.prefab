@@ -610,6 +610,8 @@ GameObject:
   - component: {fileID: 109766460}
   - component: {fileID: 109766461}
   - component: {fileID: 4070671090970152493}
+  - component: {fileID: 1167950916763624200}
+  - component: {fileID: 93414289531934276}
   m_Layer: 10
   m_Name: ShotgunMan
   m_TagString: Untagged
@@ -717,10 +719,34 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a77374a36fe6b948b4ab3e4090c0863, type: 2}
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 93414289531934276}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHurt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 93414289531934276}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -772,6 +798,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1167950916763624200}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   bulletsToShoot: {fileID: 11400000, guid: b75b8e5aa3878f34b932da880997ac01, type: 2}
   maxSpreadAngle: {fileID: 11400000, guid: c421fed047aef8d4ba58c002ce12f436, type: 2}
 --- !u!114 &109766460
@@ -788,17 +826,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facing: 0
   isGrounded: 0
+  crouchMovementModifier: {fileID: 0}
   groundCheckRadius: {fileID: 11400000, guid: ee811a2f03d03d54e89577a05b271bf0, type: 2}
   groundCheckPosition: {fileID: 6168547889407745464}
   movementSpeed: {fileID: 11400000, guid: 25770735e92e80848bad337a3d39fac7, type: 2}
-  jumpForce: {fileID: 11400000, guid: c489921ea12d9b04a86b54724a3adcb9, type: 2}
   characterInput: {fileID: 109766461}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  jumpForce: {fileID: 11400000, guid: c489921ea12d9b04a86b54724a3adcb9, type: 2}
   onJumped:
     m_PersistentCalls:
       m_Calls: []
+  jumpSoundClipSO: {fileID: 0}
+  stepInterval: 1
+  walkSoundClipSO: {fileID: 0}
 --- !u!114 &109766461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +885,36 @@ MonoBehaviour:
   animator: {fileID: 8593895446565940418}
   facing: 0
   patrol: {fileID: 109766461}
+--- !u!114 &1167950916763624200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507829571958796282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685bca0884b6774d9e53aee4adc9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playType: 0
+  soundClips:
+  - {fileID: 11400000, guid: 3ceaf6805e44a2f499b610eedef5be00, type: 2}
+--- !u!114 &93414289531934276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507829571958796282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685bca0884b6774d9e53aee4adc9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playType: 0
+  soundClips:
+  - {fileID: 11400000, guid: d7440f5da7546f441b4c53bf5e270c13, type: 2}
 --- !u!1 &8507867413022644872
 GameObject:
   m_ObjectHideFlags: 0

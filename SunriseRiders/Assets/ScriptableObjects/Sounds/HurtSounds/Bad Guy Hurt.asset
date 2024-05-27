@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a0d3d11858f0b4a9a444da40930c7d, type: 3}
+  m_Name: Bad Guy Hurt
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 0bfddb6cb78e39940ad621f08c5c60ac, type: 3}
+  - {fileID: 8300000, guid: 7665c2637da324442aeb9425635f67c9, type: 3}
+  - {fileID: 8300000, guid: 89aa48c4617813241ab7e4449d0105f7, type: 3}
+  - {fileID: 8300000, guid: 1a965a34ec4355249960a44a66b99d04, type: 3}
+  - {fileID: 8300000, guid: a6fdc6a1cfe079d47b6c024c5e1044fa, type: 3}
+  - {fileID: 8300000, guid: 18b41b7008603f043b7501734f4d6354, type: 3}
+  - {fileID: 8300000, guid: 89fd8631ee388de4795384c25155d524, type: 3}
+  - {fileID: 8300000, guid: ea99e721ded4bef44b9ee7bba72526e4, type: 3}
+  looping: 0

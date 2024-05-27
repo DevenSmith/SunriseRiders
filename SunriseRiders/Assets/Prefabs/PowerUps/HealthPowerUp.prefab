@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4575715497699916585}
   - component: {fileID: 4568589811342497625}
   - component: {fileID: 7054222326245413519}
+  - component: {fileID: 828697990485865238}
   m_Layer: 12
   m_Name: HealthPowerUp
   m_TagString: Untagged
@@ -31,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.653719, y: 0.18072192, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,6 +56,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -125,6 +128,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 828697990485865238}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   powerUpType: {fileID: 11400000, guid: 4268bac3f6ed6534d95aa1cebd87d860, type: 2}
 --- !u!65 &7054222326245413519
 BoxCollider:
@@ -139,3 +154,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13966751, y: 0.359087, z: 0.09875105}
   m_Center: {x: -0.0000019073486, y: 0.1795435, z: 0.0000000055879354}
+--- !u!114 &828697990485865238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568091490428321879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685bca0884b6774d9e53aee4adc9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playType: 0
+  soundClips:
+  - {fileID: 11400000, guid: b4a637a0f196b0a40b98f0cec4e226e6, type: 2}

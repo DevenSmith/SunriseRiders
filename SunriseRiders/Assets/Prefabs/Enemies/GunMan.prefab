@@ -501,6 +501,8 @@ GameObject:
   - component: {fileID: 3811326015261989357}
   - component: {fileID: 1367995137092889309}
   - component: {fileID: 1602331717386965019}
+  - component: {fileID: 5542779139754575112}
+  - component: {fileID: 8830153347105226109}
   m_Layer: 10
   m_Name: GunMan
   m_TagString: Untagged
@@ -589,6 +591,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5542779139754575112}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7648255556659223088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,10 +655,34 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a77374a36fe6b948b4ab3e4090c0863, type: 2}
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8830153347105226109}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHurt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8830153347105226109}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -701,6 +739,36 @@ MonoBehaviour:
   ignoreXAxis: 0
   ignoreYAxis: 1
   ignoreZAxis: 0
+--- !u!114 &5542779139754575112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793710984225667071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685bca0884b6774d9e53aee4adc9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playType: 0
+  soundClips:
+  - {fileID: 11400000, guid: 3ceaf6805e44a2f499b610eedef5be00, type: 2}
+--- !u!114 &8830153347105226109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793710984225667071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685bca0884b6774d9e53aee4adc9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playType: 0
+  soundClips:
+  - {fileID: 11400000, guid: d7440f5da7546f441b4c53bf5e270c13, type: 2}
 --- !u!1 &793972280257347473
 GameObject:
   m_ObjectHideFlags: 0
