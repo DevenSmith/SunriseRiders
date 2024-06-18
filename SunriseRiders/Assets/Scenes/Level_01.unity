@@ -2923,7 +2923,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4a57636a4cc64f6c822a6bd1aec36e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10322,10 +10322,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 297467729, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
-      propertyPath: invincible
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 331865955451634513, guid: 57b6a947d5fb78645ad0092f8e3fafdd, type: 3}
       propertyPath: spawnAsChild
       value: 1
@@ -10564,6 +10560,14 @@ PrefabInstance:
     - target: {fileID: 6645514333875678970, guid: e9d80abe916657b4794890d6995b5e60, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954285777606290419, guid: e9d80abe916657b4794890d6995b5e60, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954285777606290419, guid: e9d80abe916657b4794890d6995b5e60, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9d80abe916657b4794890d6995b5e60, type: 3}
