@@ -30,7 +30,8 @@ namespace Game
         public AudioSource PlaySound(SoundClipSO sound)
         {
            var source = GetSource();
-
+           source.gameObject.SetActive(true);
+           
            if (sound.isLooping)
            {
                source.loop = true;
@@ -101,6 +102,7 @@ namespace Game
             {
                 if (!playingAudioSources[i].isPlaying)
                 {
+                    playingAudioSources[i].gameObject.SetActive(false);
                     availableAudioSources.Push(playingAudioSources[i]);
                     playingAudioSources.Remove(playingAudioSources[i]);
                     i--;

@@ -24,6 +24,9 @@ namespace Game.LevelUtility.Stampede
         private Coroutine stampedeSpawnRoutine;
         [SerializeField] private bool triggered = false;
         
+        [SerializeField] private SoundClipSO stampedeSound;
+        [SerializeField] private float stampedeSoundStopTime = 3.0f;
+        
         public void OnTriggerEnter(Collider other)
         {
             if (triggered || other.gameObject != GameManager.PlayerReference.characterObject)
@@ -38,6 +41,7 @@ namespace Game.LevelUtility.Stampede
         private IEnumerator SpawnStampede()
         {
             var shakeDur = 0.0f;
+            var stampedeSoundSource = SoundManger.Instance.PlaySound(stampedeSound);
             foreach (var element in StampedeElements)
             {
                 shakeDur += element.delayBeforeNextElement + 1.0f;
@@ -70,6 +74,10 @@ namespace Game.LevelUtility.Stampede
                     delay -= Time.deltaTime;
                 }
             }
+
+            yield return new WaitForSeconds(stampedeSoundStopTime);
+            SoundManger.Instance.StopAudio(stampedeSoundSource);
+            
             yield return null;
         }
     }
