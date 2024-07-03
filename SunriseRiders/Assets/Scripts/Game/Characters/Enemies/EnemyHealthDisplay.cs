@@ -10,8 +10,9 @@ namespace Game.Characters.Enemies
         [SerializeField] private StringSO healthBarName;
         [SerializeField] private Health.Health enemyHealth;
         [SerializeField] private Transform healthBarPos;
-        
-        private HealthView _healthView;
+
+        [Tooltip("if left empty will get a default health view from the pool")]
+        [SerializeField] private HealthView _healthView;
         private bool waitingOnUIObjectPooler = false;
 
         private Coroutine waitForObjectPoolerRoutine;
@@ -37,17 +38,21 @@ namespace Game.Characters.Enemies
 
         private void SetUpHealthView()
         {
-            waitingOnUIObjectPooler = UIObjectPooler.UIInstance == null;
-            
-            if (waitingOnUIObjectPooler)
+            if (_healthView == null)
             {
-                if (waitForObjectPoolerRoutine == null)
-                {
-                    waitForObjectPoolerRoutine = StartCoroutine(WaitForUIObjectPooler());
-                }
+                waitingOnUIObjectPooler = UIObjectPooler.UIInstance == null;
 
-                return;
+                if (waitingOnUIObjectPooler)
+                {
+                    if (waitForObjectPoolerRoutine == null)
+                    {
+                        waitForObjectPoolerRoutine = StartCoroutine(WaitForUIObjectPooler());
+                    }
+
+                    return;
+                }
             }
+
             SetUpHealthBar();
         }
 
@@ -64,9 +69,9 @@ namespace Game.Characters.Enemies
 
         private void SetUpHealthBar()
         {
+            waitingOnUIObjectPooler = false;
             if (_healthView == null)
             {
-                waitingOnUIObjectPooler = false;
                 var healthBarObj = UIObjectPooler.UIInstance.GetPooledObject(healthBarName.Value);
                 _healthView = healthBarObj.GetComponent<HealthView>();
                 _healthView.SetUp(enemyHealth, healthBarPos);
@@ -74,7 +79,7 @@ namespace Game.Characters.Enemies
             }
             else
             {
-                Debug.LogWarning(gameObject.name + " tried to set up a a health view and already had one");
+                _healthView.SetUp(enemyHealth, healthBarPos);
             }
         }
     }

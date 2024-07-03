@@ -15,6 +15,10 @@ namespace Game.Health
         private Camera _gameCamera;
         private RectTransform _healthViewTransform;
         private Canvas _canvas;
+
+        [SerializeField] private bool doesntMove = false;
+        [SerializeField] private bool shouldPool = true;
+        [SerializeField] private bool canBeDisabled = true;
         private void Awake()
         {
             _healthViewTransform = gameObject.GetComponent<RectTransform>();
@@ -35,7 +39,10 @@ namespace Game.Health
             _health = null;
             _gamePositionTransform = null;
             gameObject.SetActive(false);
-            UIObjectPooler.UIInstance.PoolObject(gameObject);
+            if (shouldPool)
+            {
+                UIObjectPooler.UIInstance.PoolObject(gameObject);
+            }
         }
 
         public void SetUp(Health healthValue, Transform transformValue)
@@ -59,12 +66,19 @@ namespace Game.Health
         private void HideHealthAmount()
         {
             healthSlider.value = 0;
-            gameObject.SetActive(false);
+
+            if (canBeDisabled)
+            {
+                gameObject.SetActive(false);
+            }
         }
         
 
         private void LateUpdate()
         {
+            if (doesntMove)
+                return;
+            
             var screenPos = _gameCamera.WorldToScreenPoint(_gamePositionTransform.position);
             float h = Screen.height;
             float w = Screen.width;
