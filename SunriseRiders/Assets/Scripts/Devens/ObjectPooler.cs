@@ -5,7 +5,9 @@ using UnityEngine;
 namespace Devens
 {
     [Serializable]
-    public class ObjectPoolItem {
+    public class ObjectPoolItem
+    {
+        public string name;
         public int amountToPool;
         public GameObject objectToPool;
         public bool shouldExpand;

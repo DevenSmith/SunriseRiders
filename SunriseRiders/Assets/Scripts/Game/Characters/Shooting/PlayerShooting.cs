@@ -1,4 +1,5 @@
 ﻿using Game.Characters.GameInput;
+using Game.Signals;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -56,7 +57,10 @@ namespace Game.Characters.Shooting
       {
          if (playerInput.shoot)
          {
-            currentWeapon.Shoot();
+            if (currentWeapon.Shoot())
+            {
+               Devens.Signals.Get<PlayShotSignal>().Dispatch();
+            }
          }
 
          if (testingBuildRig)

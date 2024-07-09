@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6092304, y: 0.9726608, z: -1.7283385}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,21 +45,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToPool:
-  - amountToPool: 10
+  - name: Player Bullet
+    amountToPool: 10
     objectToPool: {fileID: 1291915807804340102, guid: 1fbc3433646307c4183c406b0308d59a, type: 3}
     shouldExpand: 1
-  - amountToPool: 10
+  - name: PlayerRifleBullet
+    amountToPool: 10
     objectToPool: {fileID: 1291915807804340102, guid: 4808f31102d10d74d9660e71bf96a7f3, type: 3}
     shouldExpand: 1
-  - amountToPool: 10
+  - name: PlayerPistolBullet
+    amountToPool: 10
     objectToPool: {fileID: 1291915807804340102, guid: a3600575c009f454abf5163dc1cf8def, type: 3}
     shouldExpand: 1
-  - amountToPool: 10
+  - name: PlayerShotgunBullet
+    amountToPool: 10
     objectToPool: {fileID: 1291915807804340102, guid: 59225191de1a2f14197949feff0c715d, type: 3}
     shouldExpand: 1
-  - amountToPool: 10
+  - name: GunManBullet
+    amountToPool: 10
     objectToPool: {fileID: 1291915807804340102, guid: 093e44fc9d9ae11479b7be53980b0df4, type: 3}
     shouldExpand: 1
-  - amountToPool: 10
+  - name: ShotgunManBullet
+    amountToPool: 10
     objectToPool: {fileID: 1291915807804340102, guid: c412a289582c98947a5fda0e8df97f41, type: 3}
+    shouldExpand: 1
+  - name: LargeExplosion
+    amountToPool: 10
+    objectToPool: {fileID: 6948627780245708532, guid: 1d43ad1ec0b527845a3a88f783dff0ff, type: 3}
+    shouldExpand: 1
+  - name: MediumExplosion
+    amountToPool: 10
+    objectToPool: {fileID: 8542729779372407463, guid: 7ba7aa3620fb0bb4fb507bfce2bdf7ea, type: 3}
+    shouldExpand: 1
+  - name: SmallExplosion
+    amountToPool: 10
+    objectToPool: {fileID: 379845462514399219, guid: c5bbace0daa541541ac527fa93951a08, type: 3}
+    shouldExpand: 1
+  - name: WarPartyAttack
+    amountToPool: 5
+    objectToPool: {fileID: 290307307629656691, guid: 909cbca34eb5a4e41b2aa0302abc630f, type: 3}
+    shouldExpand: 1
+  - name: WarPartyAttackArrow
+    amountToPool: 10
+    objectToPool: {fileID: 4905368789949453373, guid: f2d5a8e8b9d74e34c81b1f0d4c772fb6, type: 3}
     shouldExpand: 1

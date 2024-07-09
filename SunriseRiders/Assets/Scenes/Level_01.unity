@@ -2076,6 +2076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461755864}
   - component: {fileID: 461755863}
+  - component: {fileID: 461755865}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2112,6 +2113,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461755865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461755862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a568493e56263784c8ba07f640292669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minShotsToTrigger: {fileID: 11400000, guid: ffec57fb800ea1d4396afc38dc1b2085, type: 2}
+  maxShotsToTrigger: {fileID: 11400000, guid: 37adefa5bc4ae7245bb7e6250c056bd6, type: 2}
+  warPartyAttackPrefabName: {fileID: 11400000, guid: 9e487749032ed2947a588c5930967bc5, type: 2}
+  AttackPositionVariance: {fileID: 11400000, guid: 21ec992bc2996714b995367cdfbabd75, type: 2}
+  onWarPartyAttackTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  shotsToTriggerRemaining: -1
 --- !u!1001 &479356847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5455,7 +5476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4764298106409884, guid: b32c7959973c2cc489a5a0fcec92c87a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.03
+      value: -4.4520006
       objectReference: {fileID: 0}
     - target: {fileID: 4764298106409884, guid: b32c7959973c2cc489a5a0fcec92c87a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9122,7 +9143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToPool:
-  - amountToPool: 5
+  - name: 
+    amountToPool: 5
     objectToPool: {fileID: 5214473805811152509, guid: d559b2376c1908045b0a5c287e164b83, type: 3}
     shouldExpand: 1
 --- !u!4 &1897466431 stripped
@@ -10985,6 +11007,26 @@ PrefabInstance:
       propertyPath: healthBarPos
       value: 
       objectReference: {fileID: 9075874299902049298}
+    - target: {fileID: 2866783606990105838, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.42199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227690527850686870, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227690528086610271, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227690528106200223, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227690528204049190, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3227690528542412441, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: m_Name
       value: ShotGunBossHolder
@@ -11032,6 +11074,10 @@ PrefabInstance:
     - target: {fileID: 3227690528542412442, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227690528732332983, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: characterStartingHealth
@@ -11797,46 +11843,6 @@ PrefabInstance:
     - target: {fileID: 7748064776001089974, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[6].amountToPool
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[6].objectToPool
-      value: 
-      objectReference: {fileID: 6948627780245708532, guid: 1d43ad1ec0b527845a3a88f783dff0ff, type: 3}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[6].shouldExpand
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[7].amountToPool
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[7].objectToPool
-      value: 
-      objectReference: {fileID: 8542729779372407463, guid: 7ba7aa3620fb0bb4fb507bfce2bdf7ea, type: 3}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[7].shouldExpand
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[8].amountToPool
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[8].objectToPool
-      value: 
-      objectReference: {fileID: 379845462514399219, guid: c5bbace0daa541541ac527fa93951a08, type: 3}
-    - target: {fileID: 7748064776001089975, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}
-      propertyPath: itemsToPool.Array.data[8].shouldExpand
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 967a15f9199a81f43bd2200df5759f2a, type: 3}

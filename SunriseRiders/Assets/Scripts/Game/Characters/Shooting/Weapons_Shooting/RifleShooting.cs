@@ -2,9 +2,9 @@
 {
     public class RifleShooting : Weapons_Shooting.WeaponShooting
     {
-        public override void Shoot()
+        public override bool Shoot()
         {
-            base.Shoot();
+            return base.Shoot();
         }
     }
 }

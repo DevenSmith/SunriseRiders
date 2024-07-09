@@ -31,10 +31,10 @@ namespace Game.Characters.Shooting.Weapons_Shooting
             }
         }
         
-        public virtual void Shoot()
+        public virtual bool Shoot()
         {
             if (shotDelay > 0.0f)
-                return;
+                return false;
             
             var bullet = ObjectPooler.Instance.GetPooledObject(bulletPrefabName.Value);
             bullet.SetActive(true);
@@ -43,6 +43,7 @@ namespace Game.Characters.Shooting.Weapons_Shooting
             shotDelay = delayBetweenShots.Value;
             
             onShoot?.Invoke();
+            return true;
         }
     }
 }

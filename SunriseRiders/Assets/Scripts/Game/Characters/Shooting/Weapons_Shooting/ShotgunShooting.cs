@@ -8,10 +8,10 @@ namespace Game.Characters.Shooting.Weapons_Shooting
         [SerializeField] private float maxSpreadAngle = 15.0f;
         [SerializeField] private int bulletsPerShot = 5;
 
-        public override void Shoot()
+        public override bool Shoot()
         {
             if (shotDelay > 0.0f)
-                return;
+                return false;
 
             for (int i = 0; i < bulletsPerShot; i++)
             {
@@ -26,6 +26,7 @@ namespace Game.Characters.Shooting.Weapons_Shooting
             }
             shotDelay = delayBetweenShots.Value;
             onShoot?.Invoke();
+            return true;
         }
     }
 }
