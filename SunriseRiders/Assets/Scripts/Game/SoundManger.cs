@@ -31,6 +31,7 @@ namespace Game
         {
            var source = GetSource();
            source.gameObject.SetActive(true);
+           source.loop = false;
            
            if (sound.isLooping)
            {
