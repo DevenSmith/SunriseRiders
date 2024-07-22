@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6048305512463465962}
   - component: {fileID: 3412976234430313725}
+  - component: {fileID: -7367907326789310074}
   m_Layer: 0
   m_Name: Warparty Attack
   m_TagString: Untagged
@@ -54,6 +55,36 @@ MonoBehaviour:
   - {fileID: 2410948444115531159}
   - {fileID: 4075183041162009530}
   arrowPrefabName: {fileID: 11400000, guid: e33def74904396f418da2e23c038fc9d, type: 2}
+  onArrowsSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7367907326789310074}
+        m_TargetAssemblyTypeName: Game.SoundHelper, GameScripts
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-7367907326789310074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290307307629656691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685bca0884b6774d9e53aee4adc9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playType: 0
+  soundClips:
+  - {fileID: 11400000, guid: 566558f9749c1704093362814648f20c, type: 2}
 --- !u!1 &3359306446860275406
 GameObject:
   m_ObjectHideFlags: 0

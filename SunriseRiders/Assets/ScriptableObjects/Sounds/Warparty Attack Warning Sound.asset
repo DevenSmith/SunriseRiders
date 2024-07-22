@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ca316f66cf132489a5bebf12736d1f, type: 3}
-  m_Name: WarpartyArrowDamage
+  m_Script: {fileID: 11500000, guid: 86a0d3d11858f0b4a9a444da40930c7d, type: 3}
+  m_Name: Warparty Attack Warning Sound
   m_EditorClassIdentifier: 
-  intValue: 15
+  clips:
+  - {fileID: 8300000, guid: 73b4d29646641ce4db9e7a6aeb530275, type: 3}
+  looping: 0
+  volumeLevel: 0.5

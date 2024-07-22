@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Devens;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
@@ -11,6 +12,8 @@ namespace Game
         [SerializeField] private StringSO arrowPrefabName;
         
         private float currentDelayBeforeArrows;
+
+        public UnityEvent onArrowsSpawn;
         
         private void OnEnable()
         {
@@ -60,6 +63,7 @@ namespace Game
                     arrow.transform.position = spawnPoint.position;
                     arrow.SetActive(true);
                 }
+                onArrowsSpawn?.Invoke();
             }
             else
             {
