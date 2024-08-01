@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4792590445996568760}
   - component: {fileID: 4792590445996568762}
   - component: {fileID: 4792590445996568761}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: StampedeTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
