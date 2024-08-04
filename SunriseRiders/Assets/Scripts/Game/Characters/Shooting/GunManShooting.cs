@@ -3,6 +3,7 @@ using System.IO.IsolatedStorage;
 using Devens;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Game.Characters.Shooting
 {
@@ -31,6 +32,7 @@ namespace Game.Characters.Shooting
             _playerTargetTransform = EnemyManager.Instance.PlayerTargetPoint;
             enemyHealth.onDie.AddListener(OnDeathAction);
 
+            shotDelay = Random.Range(0.0f, delayBetweenShots.Value/2.0f);
         }
 
         private void OnDeathAction()

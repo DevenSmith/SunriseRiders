@@ -765,6 +765,7 @@ MonoBehaviour:
   healthBarName: {fileID: 11400000, guid: 66d9c71f18dd83d4cb8230c1193b29dc, type: 2}
   enemyHealth: {fileID: 4346917599602442866}
   healthBarPos: {fileID: 6770323787307476113}
+  _healthView: {fileID: 0}
 --- !u!114 &6685066254902853204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +886,17 @@ MonoBehaviour:
   animator: {fileID: 8593895446565940418}
   facing: 0
   patrol: {fileID: 109766461}
+  rig: {fileID: 4332646633709640910}
+  rigBuilder: {fileID: 4332646633018428417}
+  boneIKConstraints:
+  - {fileID: 4332646633832827969}
+  - {fileID: 4332646631937975993}
+  health: {fileID: 4346917599602442866}
+  gun: {fileID: 2451210892251188929}
+  colliders:
+  - {fileID: 1438007180865767157}
+  - {fileID: 6020559885132854141}
+  charRigidbody: {fileID: 8507829571958796280}
 --- !u!114 &1167950916763624200
 MonoBehaviour:
   m_ObjectHideFlags: 0

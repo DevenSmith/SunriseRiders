@@ -9655,7 +9655,6 @@ GameObject:
   - component: {fileID: 6002413234376242445}
   - component: {fileID: 5631703360345559553}
   - component: {fileID: 297467729}
-  - component: {fileID: 7971411571240825334}
   - component: {fileID: 1002932979608175014}
   - component: {fileID: 3361558570920551133}
   - component: {fileID: 67439074570669055}
@@ -9827,6 +9826,29 @@ MonoBehaviour:
   crouchColliderCenter: 0.425
   crouchColliderHeight: 1.25
   verticalMovementAnimationTriggerBuffer: 0.45
+  rig: {fileID: 3446507987585720397}
+  rigBuilder: {fileID: 3446507987697594498}
+  boneIKConstraints:
+  - {fileID: 3446507987441299650}
+  - {fileID: 3446507988765727290}
+  health: {fileID: 297467729}
+  gun: {fileID: 1386579585795720995}
+  charRigidbody: {fileID: 7342329752712319867}
+  onDeathFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5752991384133441855}
+        m_TargetAssemblyTypeName: Game.LoadLevelComponent, GameScripts
+        m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &297467729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9865,43 +9887,6 @@ MonoBehaviour:
   onHeal:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7971411571240825334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7342329752712319865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8806a477e537b2c4fab6f118232df238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 297467729}
-  strobeDuration: {fileID: 11400000, guid: b61049673efa8fd4582a70d9dce18597, type: 2}
-  strobeRampUp: {fileID: 11400000, guid: c0cbd3734e471ce4f8704234155c1a07, type: 2}
-  strobeStartRate: {fileID: 11400000, guid: 879e836f3a3d76b448a705fc7a4b5a0b, type: 2}
-  objectsToStrobe:
-  - {fileID: 3598552817325486658}
-  - {fileID: 7341807954338194869}
-  colliders:
-  - {fileID: 67439074570669055}
-  rigidBody: {fileID: 7342329752712319867}
-  onFinishStrobing:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5752991384133441855}
-        m_TargetAssemblyTypeName: Game.LoadLevelComponent, GameScripts
-        m_MethodName: LoadLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1002932979608175014
 MonoBehaviour:
   m_ObjectHideFlags: 0

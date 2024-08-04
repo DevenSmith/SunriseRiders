@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Animations.Rigging;
+using UnityEngine.Events;
 
 namespace Game.Characters.Movement
 {
@@ -23,6 +26,18 @@ namespace Game.Characters.Movement
 
         private bool wasCrouching = false;
         
+        [SerializeField] private Rig rig;
+        [SerializeField] private RigBuilder rigBuilder;
+        [SerializeField] private TwoBoneIKConstraint[] boneIKConstraints;
+        [SerializeField] private Health.Health health;
+        [SerializeField] private GameObject gun;
+        private const string DieTrigger = "DIE";
+
+        private bool dying = false;
+        private bool doneDying = false;
+        [SerializeField] private Rigidbody charRigidbody;
+        public UnityEvent onDeathFinished;
+        
         private void Awake()
         {
             if (movement == null)
@@ -37,6 +52,20 @@ namespace Game.Characters.Movement
             }
 
             movement.OnFacingChanged += OnChangedDirection;
+            
+            if (health == null)
+            {
+                health = GetComponent<Health.Health>();
+                if (health == null)
+                {
+                    Debug.LogError( gameObject.name+ " No Health Component Assigned to " + this.name);
+                }
+            }
+
+            if (health != null)
+            {
+                health.onDie.AddListener(Died);
+            }
         }
 
         private void OnDestroy()
@@ -45,54 +74,100 @@ namespace Game.Characters.Movement
             {
                 movement.OnFacingChanged -= OnChangedDirection;
             }
+            
+            if (health != null)
+            {
+                health.onDie.RemoveListener(Died);
+            }
         }
 
         private void Update()
         {
-            animator.SetBool(MovementConstants.Crouching, movement.IsCrouching);
-
-            if (!wasCrouching && movement.IsCrouching)
+            if (dying)
             {
-                weaponPivotTransform.position = crouchPivotHeightTransform.position;
-                var center = playerCollider.center;
-                center.y = crouchColliderCenter;
-                playerCollider.center = center;
-                playerCollider.height = crouchColliderHeight;
-            }
-
-            if (wasCrouching && !movement.IsCrouching)
-            {
-                weaponPivotTransform.position = defaultPivotHeightTransform.position;
-                var center = playerCollider.center;
-                center.y = defaultColliderCenter;
-                playerCollider.center = center;
-                playerCollider.height = defaultColliderHeight;
-            }
-
-            animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
-
-            if (!movement.isGrounded && movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
-            {
-                animator.SetBool(MovementConstants.Jumping, true);
-                animator.SetBool(MovementConstants.Falling, false);
-            }
-            else if (!movement.isGrounded && movement.MovementVector2.y < - verticalMovementAnimationTriggerBuffer)
-            {
-                animator.SetBool(MovementConstants.Jumping, false);
-                animator.SetBool(MovementConstants.Falling, true);
+                if (!doneDying && animator.GetCurrentAnimatorStateInfo(0).IsName("Done"))
+                {
+                    doneDying = true;
+                    onDeathFinished?.Invoke();
+                }
             }
             else
             {
-                animator.SetBool(MovementConstants.Jumping, false);
-                animator.SetBool(MovementConstants.Falling, false);
-            }
+                animator.SetBool(MovementConstants.Crouching, movement.IsCrouching);
 
-            wasCrouching = movement.IsCrouching;
+                if (!wasCrouching && movement.IsCrouching)
+                {
+                    weaponPivotTransform.position = crouchPivotHeightTransform.position;
+                    var center = playerCollider.center;
+                    center.y = crouchColliderCenter;
+                    playerCollider.center = center;
+                    playerCollider.height = crouchColliderHeight;
+                }
+
+                if (wasCrouching && !movement.IsCrouching)
+                {
+                    weaponPivotTransform.position = defaultPivotHeightTransform.position;
+                    var center = playerCollider.center;
+                    center.y = defaultColliderCenter;
+                    playerCollider.center = center;
+                    playerCollider.height = defaultColliderHeight;
+                }
+
+                animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
+
+                if (!movement.isGrounded && movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
+                {
+                    animator.SetBool(MovementConstants.Jumping, true);
+                    animator.SetBool(MovementConstants.Falling, false);
+                }
+                else if (!movement.isGrounded && movement.MovementVector2.y < -verticalMovementAnimationTriggerBuffer)
+                {
+                    animator.SetBool(MovementConstants.Jumping, false);
+                    animator.SetBool(MovementConstants.Falling, true);
+                }
+                else
+                {
+                    animator.SetBool(MovementConstants.Jumping, false);
+                    animator.SetBool(MovementConstants.Falling, false);
+                }
+
+                wasCrouching = movement.IsCrouching;
+            }
         }
 
         private void OnChangedDirection()
         {
             playerCharacterTransform.eulerAngles += Vector3.up * 180;
+        }
+        
+        private void Died()
+        {
+            dying = true;
+            gun.SetActive(false);
+
+            charRigidbody.isKinematic = true;
+            charRigidbody.useGravity = false;
+
+            StartCoroutine(SetRigWeight());
+
+            var index = Random.Range(1, 4);
+            animator.SetTrigger(DieTrigger + index.ToString());
+        }
+
+        private IEnumerator SetRigWeight()
+        {
+            while (animator != null && animator.IsInTransition(0))
+            {
+                yield return null;
+            }
+            yield return new WaitForEndOfFrame();
+            
+            foreach (var ikConstraint in boneIKConstraints)
+            {
+                ikConstraint.weight = 0.0f;
+            }
+            rig.weight = 0.0f;
+            rigBuilder.Build();
         }
     }
 }
