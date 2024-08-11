@@ -12310,20 +12310,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5c1bf2144edbd3f4fbe964fbabdd2c5b, type: 2}
     - target: {fileID: 4792590445996568761, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}
+      propertyPath: StampedeElements.Array.data[0].stampedeElementPrefab
+      value: 
+      objectReference: {fileID: 6847187215793033386, guid: 23debef28d3f441478107007dfcf239f, type: 3}
+    - target: {fileID: 4792590445996568761, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}
+      propertyPath: StampedeElements.Array.data[1].stampedeElementPrefab
+      value: 
+      objectReference: {fileID: 6847187215793033386, guid: 0b5ce8bac469bf24b8cdb38eb778b1b3, type: 3}
+    - target: {fileID: 4792590445996568761, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}
       propertyPath: StampedeElements.Array.data[3].stampedeElementPrefab
       value: 
-      objectReference: {fileID: 2252859590510758975, guid: 31fbc8b48a188fa4ea4c8d614bbdca80, type: 3}
+      objectReference: {fileID: 6847187215793033386, guid: 23debef28d3f441478107007dfcf239f, type: 3}
     - target: {fileID: 4792590445996568761, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}
       propertyPath: StampedeElements.Array.data[0].delayBeforeNextElement
-      value: 1.5
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4792590445996568761, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}
       propertyPath: StampedeElements.Array.data[1].delayBeforeNextElement
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4792590445996568761, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}
       propertyPath: StampedeElements.Array.data[2].delayBeforeNextElement
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dad8ef3ff172b6428a72ee9891ec28d, type: 3}

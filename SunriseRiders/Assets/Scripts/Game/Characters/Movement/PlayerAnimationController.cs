@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Linq;
+using Devens;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.Events;
@@ -37,6 +39,40 @@ namespace Game.Characters.Movement
         private bool doneDying = false;
         [SerializeField] private Rigidbody charRigidbody;
         public UnityEvent onDeathFinished;
+
+        [SerializeField] private TagSO runningGroundTag;
+
+        private bool ShouldRun
+        {
+            get
+            {
+                if (movement.MovementVector2.x != 0.0f
+                    || movement.isGrounded && IsOnRunningGround)
+                {
+                    return true;
+                }
+                
+                return false;
+            }
+        }
+
+        private bool IsOnRunningGround
+        {
+            get
+            {
+                var runningGrounds = TagUtility.FindGameObjectsWithTag(runningGroundTag);
+                
+                foreach (var collider in movement.currentGround)
+                {
+                    if (runningGrounds.Contains(collider.gameObject))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        }
         
         private void Awake()
         {
@@ -112,8 +148,10 @@ namespace Game.Characters.Movement
                     playerCollider.center = center;
                     playerCollider.height = defaultColliderHeight;
                 }
-
-                animator.SetBool(MovementConstants.Running, movement.MovementVector2.x != 0.0f);
+                
+                
+                
+                animator.SetBool(MovementConstants.Running, ShouldRun);
 
                 if (!movement.isGrounded && movement.MovementVector2.y > verticalMovementAnimationTriggerBuffer)
                 {

@@ -13,6 +13,7 @@ namespace Game.Characters.Movement
         public Action OnFacingChanged;
         public Facing facing = Facing.Right;
         public bool isGrounded = false;
+        public Collider[] currentGround;
 
         public bool IsCrouching => characterInput.crouch;
         public FloatSO crouchMovementModifier;
@@ -71,8 +72,8 @@ namespace Game.Characters.Movement
                     break;
             }
 
-
-            isGrounded = Physics.OverlapSphere(groundCheckPosition.position, groundCheckRadius.Value, whatIsGround).Length > 0;
+            currentGround = Physics.OverlapSphere(groundCheckPosition.position, groundCheckRadius.Value, whatIsGround);
+            isGrounded = currentGround.Length > 0;
             
             _movementVelocity.x = characterInput.MovementVector.x * movementSpeed.Value;
             if (IsCrouching)

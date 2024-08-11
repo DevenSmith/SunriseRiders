@@ -9702,6 +9702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facing: 0
   isGrounded: 0
+  currentGround: []
   crouchMovementModifier: {fileID: 11400000, guid: bcf4fd23da22d04448441c2ae8674c56, type: 2}
   groundCheckRadius: {fileID: 11400000, guid: ee811a2f03d03d54e89577a05b271bf0, type: 2}
   groundCheckPosition: {fileID: 5075493519074500923}
@@ -9849,6 +9850,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  runningGroundTag: {fileID: 11400000, guid: 997d84e771de06a4f9bd4caf3c1c61d9, type: 2}
 --- !u!114 &297467729
 MonoBehaviour:
   m_ObjectHideFlags: 0
