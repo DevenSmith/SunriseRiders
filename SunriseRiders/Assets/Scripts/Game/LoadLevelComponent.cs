@@ -15,9 +15,35 @@ namespace Game
         [UsedImplicitly]
         public void LoadLevel()
         {
+            if (SceneTransition.Instance != null)
+            {
+                SceneTransition.Instance.onTransitionFinished.AddListener(ImmediateLoadLevel);
+                SceneTransition.Instance.StartTransitionOut();
+            }
+            else
+            {
+                ImmediateLoadLevel();
+            }
+        }
+
+        private void ImmediateLoadLevel()
+        {
+            if (SceneTransition.Instance != null)
+            {
+                SceneTransition.Instance.onTransitionFinished.AddListener(ImmediateLoadLevel);
+            }
+
             if (loadSceneAsyncRoutine == null)
             {
-                loadSceneAsyncRoutine = StartCoroutine(LoadAsyncScene());
+                if (SceneTransition.Instance != null)
+                {
+                    loadSceneAsyncRoutine = SceneTransition.Instance.StartCoroutine(LoadAsyncScene());
+                }
+                else
+                {
+                    loadSceneAsyncRoutine = StartCoroutine(LoadAsyncScene());
+                }
+                
             }
         }
         
