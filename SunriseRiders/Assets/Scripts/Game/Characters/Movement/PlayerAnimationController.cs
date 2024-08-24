@@ -187,9 +187,7 @@ namespace Game.Characters.Movement
             charRigidbody.useGravity = false;
 
             StartCoroutine(SetRigWeight());
-
-            var index = Random.Range(1, 4);
-            animator.SetTrigger(DieTrigger + index.ToString());
+            animator.SetTrigger(DieTrigger);
         }
 
         private IEnumerator SetRigWeight()
