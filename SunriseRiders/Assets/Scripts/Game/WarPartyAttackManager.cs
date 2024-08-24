@@ -1,3 +1,4 @@
+using System;
 using Devens;
 using Game.Signals;
 using UnityEngine;
@@ -23,6 +24,11 @@ namespace Game
         {
             SetShotsToTrigger();
             Devens.Signals.Get<PlayShotSignal>().AddListener(OnPlayerShot);
+        }
+
+        private void OnDestroy()
+        {
+            Devens.Signals.Get<PlayShotSignal>().RemoveListener(OnPlayerShot);
         }
 
         private void OnPlayerShot()
