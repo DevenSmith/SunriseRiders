@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using Game.Health;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
-using Random = UnityEngine.Random;
 
 namespace Game.Characters.Movement
 {
@@ -20,7 +18,6 @@ namespace Game.Characters.Movement
         [SerializeField] private Health.Health health;
         [SerializeField] private GameObject gun;
         private const string DieTrigger = "DIE";
-        [SerializeField] private StrobeOnDeath strobeOnDeath;
 
         private bool dying = false;
         private bool doneDying = false;
@@ -97,7 +94,6 @@ namespace Game.Characters.Movement
                 if (!doneDying && animator.GetCurrentAnimatorStateInfo(0).IsName("Done"))
                 {
                     doneDying = true;
-                    //strobeOnDeath.StartStrobe();
                     gameObject.SetActive(false);
                 }
             }
