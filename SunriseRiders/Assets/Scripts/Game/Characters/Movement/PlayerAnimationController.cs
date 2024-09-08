@@ -188,6 +188,8 @@ namespace Game.Characters.Movement
 
             StartCoroutine(SetRigWeight());
             animator.SetTrigger(DieTrigger);
+            animator.SetBool(MovementConstants.Jumping, false);
+            animator.SetBool(MovementConstants.Falling, false);
         }
 
         private IEnumerator SetRigWeight()
