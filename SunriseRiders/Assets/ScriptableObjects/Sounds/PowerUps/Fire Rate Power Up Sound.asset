@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e345b7c9e0a1d964aa820761afc3a3df, type: 3}
-  m_Name: HealthPowerUpType
+  m_Script: {fileID: 11500000, guid: 86a0d3d11858f0b4a9a444da40930c7d, type: 3}
+  m_Name: Fire Rate Power Up Sound
   m_EditorClassIdentifier: 
-  healAmount: {fileID: 11400000, guid: 9fe0fda85733c084683bcb93ad83cefa, type: 2}
+  clips:
+  - {fileID: 8300000, guid: be145b36d9685314faa6135b78811744, type: 3}
+  looping: 0

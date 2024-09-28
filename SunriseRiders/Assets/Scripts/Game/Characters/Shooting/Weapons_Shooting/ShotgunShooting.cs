@@ -24,7 +24,7 @@ namespace Game.Characters.Shooting.Weapons_Shooting
                 bullet.transform.position = bulletSpawnPoint.position;
                 bullet.transform.eulerAngles = eulerAngles;
             }
-            shotDelay = delayBetweenShots.Value;
+            shotDelay = delayBetweenShots.Value / modifiers.FireRateModifier;
             onShoot?.Invoke();
             return true;
         }

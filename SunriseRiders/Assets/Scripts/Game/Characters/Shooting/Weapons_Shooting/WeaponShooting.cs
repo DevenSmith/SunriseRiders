@@ -1,4 +1,5 @@
-﻿using Devens;
+﻿using System;
+using Devens;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,8 +24,21 @@ namespace Game.Characters.Shooting.Weapons_Shooting
 
         public UnityEvent onShoot;
 
+        public WeaponModifiers modifiers;
+
+        private void Awake()
+        {
+            if (modifiers == null)
+            {
+                modifiers = gameObject.AddComponent<WeaponModifiers>();
+            }
+        }
+
         private void Update()
         {
+            if (Paused)
+                return;
+            
             if (shotDelay > 0.0f)
             {
                 shotDelay -= Time.deltaTime;
@@ -40,7 +54,7 @@ namespace Game.Characters.Shooting.Weapons_Shooting
             bullet.SetActive(true);
             bullet.transform.position = bulletSpawnPoint.position;
             bullet.transform.rotation = bulletSpawnPoint.rotation;
-            shotDelay = delayBetweenShots.Value;
+            shotDelay = delayBetweenShots.Value / modifiers.FireRateModifier;
             
             onShoot?.Invoke();
             return true;

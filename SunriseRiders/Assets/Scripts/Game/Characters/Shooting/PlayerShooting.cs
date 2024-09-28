@@ -17,7 +17,9 @@ namespace Game.Characters.Shooting
       [SerializeField] private Weapons_Shooting.WeaponShooting currentWeapon;
 
       [SerializeField]private bool testingBuildRig = false;
-      
+
+      public Weapons_Shooting.WeaponShooting CurrentWeapon => currentWeapon != null? currentWeapon: defaultWeapon;
+
       private void Start()
       {
          SetWeapon(currentWeapon == null ? defaultWeapon : currentWeapon);
