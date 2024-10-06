@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54be2c5d14755914496f34841de6f6f1, type: 3}
   m_Name: FireRatePowerUpType
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 68813275acedb4983bdec002efa38bbe, type: 3}
+  id: FireRatePowerUp
   fireRateModifier: {fileID: 11400000, guid: a14d527f42b34f84ba1b9caca0d8b374, type: 2}
   modifierDuration: {fileID: 11400000, guid: 493365a0ffa58cd449e4d77b273430eb, type: 2}
