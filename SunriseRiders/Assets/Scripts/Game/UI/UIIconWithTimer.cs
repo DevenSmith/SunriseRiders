@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Game.UI
 {
-    public class UIIconWithTimer : MonoBehaviour
+    public class UIIconWithTimer : PausableMonoBehavior
     {
         [SerializeField] private Image iconImage;
         [SerializeField] private Image fillBar;
@@ -16,10 +16,10 @@ namespace Game.UI
     
         public void ShowIcon(Sprite icon, float duration, string id)
         {
-            this.iconImage.sprite = icon;
+            iconImage.sprite = icon;
             this.duration = duration;
-            this.timeRemaining = duration;
-            this.iconID = id;
+            timeRemaining = duration;
+            iconID = id;
 
             fillBar.fillAmount = 1.0f;
             timeText.text = Mathf.Ceil(timeRemaining).ToString() + "s";
@@ -27,6 +27,9 @@ namespace Game.UI
 
         private void Update()
         {
+            if (Paused)
+                return;
+            
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;

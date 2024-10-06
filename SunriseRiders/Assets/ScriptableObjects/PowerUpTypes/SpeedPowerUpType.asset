@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603a3fdc81d39cf4386eddf6ac154a1f, type: 3}
+  m_Name: SpeedPowerUpType
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 919f123cb0f5248f5a454c9ce4e6c8f4, type: 3}
+  id: SpeedPowerUp
+  speedModifier: {fileID: 11400000, guid: 1eddaf9c7aea9be43aef0e3988c1eed8, type: 2}
+  modifierDuration: {fileID: 11400000, guid: 2077141165abcbf4da2cc02645b6e7f9, type: 2}

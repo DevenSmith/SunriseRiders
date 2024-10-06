@@ -8,6 +8,8 @@ namespace Game.Characters
         public PlayerInput playerInput;
         public WeaponSwapper weaponSwapper;
         public PlayerShooting playerShooting;
+        public Movement.Movement playerMovement;
+        
         protected override void Initialize()
         {
             base.Initialize();
@@ -30,6 +32,17 @@ namespace Game.Characters
                 {
                     playerShooting = GetComponentInChildren<PlayerShooting>();
                 }
+            }
+
+            if (playerMovement == null)
+            {
+                playerMovement = GetComponent<Movement.Movement>();
+
+                if (playerMovement == null)
+                {
+                    playerMovement = GetComponentInChildren<Movement.Movement>();
+                }
+                
             }
             
             GameManager.PlayerReference = this;

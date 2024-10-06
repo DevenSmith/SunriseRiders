@@ -1,10 +1,9 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using Devens;
 using Game.Characters.GameInput;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Game.Characters.Movement
 {
@@ -41,6 +40,12 @@ namespace Game.Characters.Movement
         [SerializeField] private float stepInterval = 1.0f;
         [SerializeField] private SoundClipSO walkSoundClipSO;
         private float curStepInterval = 0.0f;
+
+        [SerializeField]
+        private float Modifier => modifierDurationRemaining > 0.0f ? modifier : 1.0f;
+
+        private float modifier = 1.0f;
+        private float modifierDurationRemaining = 0.0f;
         
         private void Awake()
         {
@@ -75,7 +80,7 @@ namespace Game.Characters.Movement
             currentGround = Physics.OverlapSphere(groundCheckPosition.position, groundCheckRadius.Value, whatIsGround);
             isGrounded = currentGround.Length > 0;
             
-            _movementVelocity.x = characterInput.MovementVector.x * movementSpeed.Value;
+            _movementVelocity.x = characterInput.MovementVector.x * movementSpeed.Value * Modifier;
             if (IsCrouching)
             {
                 _movementVelocity.x *= crouchMovementModifier.Value;
@@ -120,7 +125,15 @@ namespace Game.Characters.Movement
 
         private void Update()
         {
+            if (Paused)
+                return;
+            
             UpdateFacing();
+
+            if (modifierDurationRemaining > 0.0f)
+            {
+                modifierDurationRemaining -= Time.deltaTime;
+            }
         }
 
         /// <summary>
@@ -169,6 +182,12 @@ namespace Game.Characters.Movement
                 facing = newFacing;
                 OnFacingChanged.Invoke();
             }
+        }
+
+        public void UpdateModifier(float modifier, float duration)
+        {
+            this.modifier = modifier;
+            modifierDurationRemaining = duration;
         }
     }
 }
