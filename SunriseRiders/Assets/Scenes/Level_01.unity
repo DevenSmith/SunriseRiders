@@ -12516,7 +12516,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ba5bed22254850b4aa9e539e0c5d4625, type: 2}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -12531,6 +12531,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 186994969}
@@ -12543,6 +12547,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1735387458}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1135056157}
+    - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -12552,6 +12560,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
@@ -12567,6 +12579,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: HideBossHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
@@ -12577,6 +12593,10 @@ PrefabInstance:
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Game.UI.BossHealthDisplay, GameScripts
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -12600,6 +12620,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893235567085126009, guid: 0394308948def954284eb6b5c7bd5178, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
