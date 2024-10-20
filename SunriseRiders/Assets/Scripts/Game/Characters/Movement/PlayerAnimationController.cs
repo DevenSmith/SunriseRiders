@@ -64,6 +64,11 @@ namespace Game.Characters.Movement
                 
                 foreach (var collider in movement.currentGround)
                 {
+                    if (collider == null)
+                    {
+                        continue;
+                    }
+                    
                     if (runningGrounds.Contains(collider.gameObject))
                     {
                         return true;

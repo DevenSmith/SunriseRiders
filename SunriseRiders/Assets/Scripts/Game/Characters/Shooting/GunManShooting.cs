@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Game.Characters.Shooting
 {
-    public class GunManShooting : MonoBehaviour
+    public class GunManShooting : PausableMonoBehavior
     {
         [SerializeField] protected FloatSO delayBetweenShots;
         [SerializeField] protected StringSO bulletPrefabName;
@@ -25,7 +25,7 @@ namespace Game.Characters.Shooting
         
         private bool CanStartShooting => Mathf.Abs((_enemyTransform.position - _playerTransform.position).magnitude) < playerDistanceToStartShooting.Value;
 
-        private void Start()
+        protected override void Start()
         {
             _enemyTransform = transform;
             _playerTransform = EnemyManager.Instance.PlayerTransform;
@@ -44,6 +44,9 @@ namespace Game.Characters.Shooting
 
         private void Update()
         {
+            if (Paused)
+                return;
+            
             if (shotDelay > 0.0f)
             {
                 shotDelay -= Time.deltaTime;

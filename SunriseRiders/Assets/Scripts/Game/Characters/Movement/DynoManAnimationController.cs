@@ -1,28 +1,29 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
 namespace Game.Characters.Movement
 {
-    public class GunManAnimationController : MonoBehaviour
+    public class DynoManAnimationController : MonoBehaviour
     {
         [SerializeField] private Animator animator;
         [SerializeField] private Facing facing = Facing.Right;
         
         private Transform _enemyTransform;
         private Transform _playerTransform;
-
-        [SerializeField] private Rig rig;
-        [SerializeField] private RigBuilder rigBuilder;
-        [SerializeField] private TwoBoneIKConstraint[] boneIKConstraints;
         [SerializeField] private Health.Health health;
-        [SerializeField] private GameObject gun;
+        
         private const string DieTrigger = "DIE";
+        private const string throwTrigger = "THROW";
 
         private bool dying = false;
         private bool doneDying = false;
         [SerializeField] private Collider[] colliders;
         [SerializeField] private Rigidbody charRigidbody;
+
+        [Header("DEBUG")]
+        [SerializeField] private bool TestThrowAnimation = false;
+
         private void Awake()
         {
             if (health == null)
@@ -57,7 +58,6 @@ namespace Game.Characters.Movement
         private void Died()
         {
             dying = true;
-            gun.SetActive(false);
 
             foreach (var collider in colliders)
             {
@@ -78,17 +78,16 @@ namespace Game.Characters.Movement
                 yield return null;
             }
             yield return new WaitForEndOfFrame();
-            
-            foreach (var ikConstraint in boneIKConstraints)
-            {
-                ikConstraint.weight = 0.0f;
-            }
-            rig.weight = 0.0f;
-            rigBuilder.Build();
         }
         
         private void Update()
         {
+            if (TestThrowAnimation)
+            {
+                TestThrowAnimation = false;
+                animator.SetTrigger(throwTrigger);
+            }
+            
             if (dying)
             {
                 if (!doneDying && animator.GetCurrentAnimatorStateInfo(0).IsName("Done"))
