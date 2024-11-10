@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 964870147644465524}
   - component: {fileID: 1859088702630703258}
   - component: {fileID: 3210282260291458000}
+  - component: {fileID: 1367752917943493806}
   m_Layer: 10
   m_Name: DynamiteManProjectile
   m_TagString: Untagged
@@ -63,6 +64,111 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.37, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1367752917943493806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172290770113618265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97f23c61c95ace4a9f3119d6c4effc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trajectoryMaxRelativeHeight: 2
+  distanceToTargetToDestroyProjectile: 1
+  maxMoveSpeed: {fileID: 11400000, guid: 3b89d8111891ca34688c75fd2274fccc, type: 2}
+  trajectoryAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0019302368
+      value: 0.007862091
+      inSlope: 2.1106675
+      outSlope: 2.1106675
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4719891
+      value: 1
+      inSlope: 0.1091913
+      outSlope: 0.1091913
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9979248
+      value: 0.0047798157
+      inSlope: -1.8922849
+      outSlope: -1.8922849
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  axisCorrectionAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  projectileSpeedAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.49790707
+      outSlope: -0.49790707
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5035354
+      value: 0.7492862
+      inSlope: 0.0035456568
+      outSlope: 0.0035456568
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.5049984
+      outSlope: 0.5049984
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &5121401968288645273
 PrefabInstance:
   m_ObjectHideFlags: 0
