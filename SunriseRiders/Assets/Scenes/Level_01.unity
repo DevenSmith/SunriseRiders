@@ -12077,7 +12077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 793710984225667071, guid: 6f7036fe56526d14e947b1cee7cc03b2, type: 3}
       propertyPath: m_Name
-      value: DynomanMan
+      value: DynomiteMan
       objectReference: {fileID: 0}
     - target: {fileID: 2783451089730048960, guid: 6f7036fe56526d14e947b1cee7cc03b2, type: 3}
       propertyPath: m_LocalRotation.w

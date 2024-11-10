@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6066601712344375641}
   - component: {fileID: 5262853398081043314}
   m_Layer: 14
-  m_Name: DynomanMan
+  m_Name: DynomiteMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,6 +225,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   animator: {fileID: 2874765460560282896}
+  projectilePrefabID: {fileID: 11400000, guid: ff119fb5ce2ac8a449e7b935edc23e3f, type: 2}
+  launchHeight: {fileID: 11400000, guid: 3b89d8111891ca34688c75fd2274fccc, type: 2}
+  spawnPoint: {fileID: 8853725912154766291}
 --- !u!1 &1300255782873213311
 GameObject:
   m_ObjectHideFlags: 0

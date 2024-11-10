@@ -89,3 +89,7 @@ MonoBehaviour:
     amountToPool: 10
     objectToPool: {fileID: 4905368789949453373, guid: f2d5a8e8b9d74e34c81b1f0d4c772fb6, type: 3}
     shouldExpand: 1
+  - name: DynamiteManProjectile
+    amountToPool: 5
+    objectToPool: {fileID: 3172290770113618265, guid: d428902d7b824614abb6d5a426611603, type: 3}
+    shouldExpand: 1
