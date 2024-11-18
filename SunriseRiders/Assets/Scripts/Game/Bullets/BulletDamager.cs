@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Devens;
 using Game.Damage;
 using Game.Health.ScriptableObjects;
@@ -15,6 +14,8 @@ namespace Game.Bullets
 
         [SerializeField] private List<DamageTypeSO> damageTypes;
 
+        [SerializeField] private bool turnOffOnDamageDealt = true;
+        
         public void OnTriggerEnter(Collider other)
         {
             IDamageable damageable = other.GetComponent<IDamageable>();
@@ -27,8 +28,11 @@ namespace Game.Bullets
         public void DealDamage(IDamageable damageable)
         {
             damageable.TakeDamage(bulletDamage.Value, damageTypes);
-            gameObject.SetActive(false);
-            ObjectPooler.Instance.PoolObject(gameObject);
+            if (turnOffOnDamageDealt)
+            {
+                gameObject.SetActive(false);
+                ObjectPooler.Instance.PoolObject(gameObject);
+            }
         }
     }
 }

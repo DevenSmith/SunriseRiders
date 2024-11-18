@@ -32,7 +32,7 @@ namespace Game.Characters.Shooting
             projectile.gameObject.SetActive(true);
             projectile.transform.position = spawnPoint.position;
             var arcMovement = projectile.GetComponent<ArcingProjectileMovement>();
-            arcMovement.Initialize(GameManager.PlayerReference.transform.position + Vector3.up);
+            arcMovement.Initialize(GameManager.PlayerReference.transform.position + Vector3.up/2.0f);
             onShoot?.Invoke();
         }
     }

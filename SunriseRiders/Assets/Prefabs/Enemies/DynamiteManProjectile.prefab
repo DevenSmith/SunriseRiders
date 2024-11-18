@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1859088702630703258}
   - component: {fileID: 3210282260291458000}
   - component: {fileID: 1367752917943493806}
+  - component: {fileID: 2775236452607209777}
   m_Layer: 10
   m_Name: DynamiteManProjectile
   m_TagString: Untagged
@@ -169,6 +170,34 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  onDestinationReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2775236452607209777}
+        m_TargetAssemblyTypeName: Game.Util.SpawnHelper, GameScripts
+        m_MethodName: SpawnFromObjPool
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3b5aa88c1e9113b4989b1102774f5f96, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Devens.StringSO, GameScripts
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2775236452607209777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172290770113618265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b9885441acd5e4d93e8b8b208fbb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnAsChild: 0
 --- !u!1001 &5121401968288645273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,3 +265,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4560309347540854, guid: 319199e838d6ca14a94e10fece5ef92f, type: 3}
   m_PrefabInstance: {fileID: 5121401968288645273}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5122416119656515713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1308034907785240, guid: 319199e838d6ca14a94e10fece5ef92f, type: 3}
+  m_PrefabInstance: {fileID: 5121401968288645273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5159292355725846301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122416119656515713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5290a082e582ff742b5efcbc6eec7f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rotations:
+  - angle: {x: 0, y: 0, z: 1}
+    speed: 360

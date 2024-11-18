@@ -1,6 +1,7 @@
 using System;
 using Devens;
 using UnityEngine;
+using UnityEngine.Events;
 
 //modified version of https://youtu.be/OPDl2uVaN_Q?si=Qkm6RVra47HhaWmk
 
@@ -28,6 +29,8 @@ namespace Game.Bullets
         private float nextPositionXCorrectionAbsolute;
 
         private bool initialized = false;
+
+        public UnityEvent onDestinationReached;
         
         public void Initialize(Vector3 targetPos)
         {
@@ -51,8 +54,9 @@ namespace Game.Bullets
             if (Vector3.Distance(transform.position, targetPosition) < distanceToTargetToDestroyProjectile) {
                 gameObject.SetActive(false);
                 ObjectPooler.Instance.PoolObject(gameObject);
+                
+                onDestinationReached?.Invoke();
             }
-
         }
 
         private void UpdatePosition()

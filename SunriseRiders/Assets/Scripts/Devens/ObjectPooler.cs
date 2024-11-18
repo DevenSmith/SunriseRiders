@@ -59,9 +59,12 @@ namespace Devens
         /// <param name="key"> should refer to the game objects name</param>
         public GameObject GetPooledObject(string key) 
         {
-            if (!_pooledObjects.ContainsKey(key)) 
+            if (!_pooledObjects.ContainsKey(key))
+            {
+                Debug.LogError("ObjectPool does not contain an object with name: " + key);
                 return null;
-            
+            }
+
             var poolItem = _pooledObjects[key];
             
             if (poolItem.PooledObjects.Count > 0)

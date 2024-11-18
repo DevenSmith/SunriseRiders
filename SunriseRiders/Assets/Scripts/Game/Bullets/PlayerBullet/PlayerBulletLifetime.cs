@@ -6,7 +6,7 @@ namespace Game.Bullets.PlayerBullet
     /// <summary>
     /// Kill bullets after x seconds if they are still active otherwise they should die when they hit something.
     /// </summary>
-    public class PlayerBulletLifetime : MonoBehaviour
+    public class PlayerBulletLifetime : PausableMonoBehavior
     {
         [SerializeField] private FloatSO bulletLifetime;
 
@@ -19,6 +19,9 @@ namespace Game.Bullets.PlayerBullet
 
         private void Update()
         {
+            if (Paused)
+                return;
+            
             _lifetimeLeft -= Time.deltaTime;
             if (_lifetimeLeft < 0.0f)
             {
